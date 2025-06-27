@@ -1,0 +1,21 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1750992237355,48,CBSD GET SAS-SAS,200,OK,CBSD GET Thread Group - Low 1-1,text,true,,565,137,1,1,http://localhost:8000/v1.3/cbsd/TEST-SN-001,40,0,30
+1750992237405,3,CBSD GET SAS-SAS,200,OK,CBSD GET Thread Group - Low 1-1,text,true,,565,137,1,1,http://localhost:8000/v1.3/cbsd/TEST-SN-001,3,0,0
+1750992237409,3,CBSD GET SAS-SAS,200,OK,CBSD GET Thread Group - Low 1-1,text,true,,565,137,1,1,http://localhost:8000/v1.3/cbsd/TEST-SN-001,3,0,0
+1750992237413,3,CBSD GET SAS-SAS,200,OK,CBSD GET Thread Group - Low 1-1,text,true,,565,137,1,1,http://localhost:8000/v1.3/cbsd/TEST-SN-001,3,0,0
+1750992237417,3,CBSD GET SAS-SAS,200,OK,CBSD GET Thread Group - Low 1-1,text,true,,565,137,1,1,http://localhost:8000/v1.3/cbsd/TEST-SN-001,3,0,0
+1750992242176,10,CBSD GET SAS-SAS,200,OK,CBSD GET Thread Group - Low 1-2,text,true,,565,137,1,1,http://localhost:8000/v1.3/cbsd/TEST-SN-001,10,0,3
+1750992242212,11,CBSD GET SAS-SAS,200,OK,CBSD GET Thread Group - Low 1-2,text,true,,565,137,1,1,http://localhost:8000/v1.3/cbsd/TEST-SN-001,11,0,0
+1750992242225,10,CBSD GET SAS-SAS,200,OK,CBSD GET Thread Group - Low 1-2,text,true,,565,137,1,1,http://localhost:8000/v1.3/cbsd/TEST-SN-001,10,0,0
+1750992242238,10,CBSD GET SAS-SAS,200,OK,CBSD GET Thread Group - Low 1-2,text,true,,565,137,1,1,http://localhost:8000/v1.3/cbsd/TEST-SN-001,10,0,0
+1750992242250,10,CBSD GET SAS-SAS,200,OK,CBSD GET Thread Group - Low 1-2,text,true,,565,137,1,1,http://localhost:8000/v1.3/cbsd/TEST-SN-001,10,0,0
+1750992717233,49,CBSD GET SAS-SAS,200,OK,CBSD GET Thread Group - Low 1-1,text,true,,565,137,1,1,http://localhost:8000/v1.3/cbsd/TEST-SN-001,44,0,22
+1750992717291,3,CBSD GET SAS-SAS,200,OK,CBSD GET Thread Group - Low 1-1,text,true,,565,137,1,1,http://localhost:8000/v1.3/cbsd/TEST-SN-001,3,0,0
+1750992717295,3,CBSD GET SAS-SAS,200,OK,CBSD GET Thread Group - Low 1-1,text,true,,565,137,1,1,http://localhost:8000/v1.3/cbsd/TEST-SN-001,3,0,0
+1750992717299,3,CBSD GET SAS-SAS,200,OK,CBSD GET Thread Group - Low 1-1,text,true,,565,137,1,1,http://localhost:8000/v1.3/cbsd/TEST-SN-001,3,0,0
+1750992717302,3,CBSD GET SAS-SAS,200,OK,CBSD GET Thread Group - Low 1-1,text,true,,565,137,1,1,http://localhost:8000/v1.3/cbsd/TEST-SN-001,3,0,0
+1750992722123,6,CBSD GET SAS-SAS,200,OK,CBSD GET Thread Group - Low 1-2,text,true,,565,137,1,1,http://localhost:8000/v1.3/cbsd/TEST-SN-001,6,0,1
+1750992722134,8,CBSD GET SAS-SAS,200,OK,CBSD GET Thread Group - Low 1-2,text,true,,565,137,1,1,http://localhost:8000/v1.3/cbsd/TEST-SN-001,7,0,0
+1750992722145,7,CBSD GET SAS-SAS,200,OK,CBSD GET Thread Group - Low 1-2,text,true,,565,137,1,1,http://localhost:8000/v1.3/cbsd/TEST-SN-001,7,0,0
+1750992722153,13,CBSD GET SAS-SAS,200,OK,CBSD GET Thread Group - Low 1-2,text,true,,565,137,1,1,http://localhost:8000/v1.3/cbsd/TEST-SN-001,13,0,0
+1750992722171,14,CBSD GET SAS-SAS,200,OK,CBSD GET Thread Group - Low 1-2,text,true,,565,137,1,1,http://localhost:8000/v1.3/cbsd/TEST-SN-001,14,0,0

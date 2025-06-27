@@ -1,15 +1,13 @@
 #!/bin/bash
 
-# Script para gerar TODOS os planos de carga
-# SAS Blockchain Registry - Performance Testing
+# Script para gerar planos de carga apenas para interface SAS-SAS (WINNF TS-0096/3003)
 
-echo "🔧 Gerando TODOS os planos de carga para SAS Blockchain Registry"
-echo "================================================================"
+echo "🔧 Gerando planos de carga para SAS-SAS (WINNF TS-0096/3003)"
+echo "=============================================================="
 echo ""
 
-# Lista de endpoints SAS (incluindo health check)
-ENDPOINTS=("health_check" "authorize" "revoke" "grant" "heartbeat" "registration")
-# Lista de TODOS os níveis de carga
+# Lista de endpoints SAS-SAS
+ENDPOINTS=("cbsd_get" "cbsd_post" "zone_get" "zone_post" "dump_get")
 LEVELS=("low" "medium" "high" "stress" "endurance")
 
 # Configurações por nível
@@ -31,64 +29,58 @@ CONFIG[endurance_loops]="50"
 CONFIG[endurance_ramp]="60"
 CONFIG[endurance_duration]="1800"
 
-echo "📋 Gerando planos para:"
-echo "   Endpoints: ${ENDPOINTS[@]}"
-echo "   Níveis: ${LEVELS[@]}"
-echo ""
-
 # Função para gerar plano
 generate_plan() {
     local endpoint=$1
     local level=$2
-    
-    local filename="sas_${endpoint}_${level}.jmx"
+    local filename="sas_sas_${endpoint}_${level}.jmx"
     local threads=${CONFIG[${level}_threads]}
     local loops=${CONFIG[${level}_loops]}
     local ramp=${CONFIG[${level}_ramp]}
     local duration=${CONFIG[${level}_duration]:-""}
-    
-    echo "🔧 Gerando: $filename"
-    
-    # Determinar endpoint e payload baseado no tipo
     local api_path=""
     local payload=""
-    local method="POST"
-    
+    local method="GET"
+    local testname=""
+
     case $endpoint in
-        "health_check")
-            api_path="/health"
-            payload=""
+        "cbsd_get")
+            api_path="/v1.3/cbsd/TEST-SN-001"
             method="GET"
+            testname="CBSD GET"
             ;;
-        "authorize")
-            api_path="/sas/authorize"
-            payload='{"sas_address":"0x123456789012345678901234567890123456789${__threadNum}"}'
+        "cbsd_post")
+            api_path="/v1.3/cbsd/TEST-SN-001"
+            method="POST"
+            payload='{"id":"TEST-SN-001","fccId":"TEST-FCC-001","userId":"TEST-USER-001","cbsdSerialNumber":"TEST-SN-001","callSign":"TESTCALL","cbsdCategory":"A","airInterface":"E_UTRA","measCapability":["EUTRA_CARRIER_RSSI"],"eirpCapability":47,"latitude":375000000,"longitude":1224000000,"height":30,"heightType":"AGL","indoorDeployment":false,"antennaGain":15,"antennaBeamwidth":360,"antennaAzimuth":0,"groupingParam":"","cbsdAddress":"0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"}'
+            testname="CBSD POST"
             ;;
-        "revoke")
-            api_path="/sas/revoke"
-            payload='{"sas_address":"0x123456789012345678901234567890123456789${__threadNum}"}'
+        "zone_get")
+            api_path="/v1.3/zone/ZONE-001"
+            method="GET"
+            testname="Zone GET"
             ;;
-        "grant")
-            api_path="/v1.3/grant"
-            payload='{"fccId":"TEST-FCC-${__threadNum}","cbsdSerialNumber":"TEST-CBSD-${__threadNum}-${__time(yyyyMMdd_HHmmss)}","channelType":"GAA","maxEirp":47,"lowFrequency":3550000000,"highFrequency":3700000000,"requestedMaxEirp":47,"requestedLowFrequency":3550000000,"requestedHighFrequency":3700000000,"grantExpireTime":1750726000}'
+        "zone_post")
+            api_path="/v1.3/zone/ZONE-001"
+            method="POST"
+            payload='{"id":"ZONE-001","name":"Zone Example","type":"protected","geometry":{"type":"Polygon","coordinates":[[[0,0],[1,0],[1,1],[0,1],[0,0]]]}}'
+            testname="Zone POST"
             ;;
-        "heartbeat")
-            api_path="/v1.3/heartbeat"
-            payload='{"fccId":"TEST-FCC-${__threadNum}","cbsdSerialNumber":"TEST-CBSD-${__threadNum}-${__time(yyyyMMdd_HHmmss)}","grantId":"grant_001","transmitExpireTime":1750726000}'
-            ;;
-        "registration")
-            api_path="/v1.3/registration"
-            payload='{"fccId":"TEST-FCC-${__threadNum}","cbsdSerialNumber":"TEST-CBSD-${__threadNum}-${__time(yyyyMMdd_HHmmss)}","userId":"TEST-USER-${__threadNum}","callSign":"TESTCALL${__threadNum}","cbsdCategory":"A","airInterface":"E_UTRA","measCapability":["EUTRA_CARRIER_RSSI"],"eirpCapability":47,"latitude":375000000,"longitude":1224000000,"height":30,"heightType":"AGL","indoorDeployment":false,"antennaGain":15,"antennaBeamwidth":360,"antennaAzimuth":0,"groupingParam":"","cbsdAddress":"0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"}'
+        "dump_get")
+            api_path="/v1.3/dump"
+            method="GET"
+            testname="Dump GET"
             ;;
     esac
-    
-    # Gerar arquivo JMX
-    cat > "plans/$filename" << EOF
+
+    echo "🔧 Gerando: $filename"
+
+    cat > "../plans/$filename" << EOF
 <?xml version="1.0" encoding="UTF-8"?>
 <jmeterTestPlan version="1.2" properties="5.0" jmeter="5.6.3">
   <hashTree>
-    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="SAS ${endpoint^} - Carga ${level^}" enabled="true">
-      <stringProp name="TestPlan.comments">Benchmark de ${endpoint} SAS com carga ${level} (${threads} usuários, ${loops} iterações)</stringProp>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="SAS-SAS ${testname} - Carga ${level^}" enabled="true">
+      <stringProp name="TestPlan.comments">Benchmark SAS-SAS ${testname} com carga ${level} (${threads} usuários, ${loops} iterações)</stringProp>
       <boolProp name="TestPlan.functional_mode">false</boolProp>
       <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
       <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
@@ -98,7 +90,7 @@ generate_plan() {
       <stringProp name="TestPlan.user_define_classpath"></stringProp>
     </TestPlan>
     <hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="${endpoint^} Thread Group - ${level^}" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="${testname} Thread Group - ${level^}" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -112,14 +104,13 @@ generate_plan() {
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="${endpoint^} SAS" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="${testname} SAS-SAS" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments">
 EOF
 
-    # Adicionar payload apenas se não for GET
-    if [ "$method" != "GET" ] && [ -n "$payload" ]; then
-        cat >> "plans/$filename" << EOF
+    if [ "$method" = "POST" ] && [ -n "$payload" ]; then
+        cat >> "../plans/$filename" << EOF
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">${payload}</stringProp>
@@ -128,11 +119,11 @@ EOF
 EOF
     fi
 
-    cat >> "plans/$filename" << EOF
+    cat >> "../plans/$filename" << EOF
             </collectionProp>
           </elementProp>
           <stringProp name="HTTPSampler.domain">localhost</stringProp>
-          <stringProp name="HTTPSampler.port">9000</stringProp>
+          <stringProp name="HTTPSampler.port">8000</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
           <stringProp name="HTTPSampler.path">${api_path}</stringProp>
@@ -148,9 +139,8 @@ EOF
         <hashTree>
 EOF
 
-    # Adicionar headers apenas se não for GET
-    if [ "$method" != "GET" ]; then
-        cat >> "plans/$filename" << EOF
+    if [ "$method" = "POST" ]; then
+        cat >> "../plans/$filename" << EOF
           <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
             <collectionProp name="HeaderManager.headers">
               <elementProp name="" elementType="Header">
@@ -163,7 +153,7 @@ EOF
 EOF
     fi
 
-    cat >> "plans/$filename" << EOF
+    cat >> "../plans/$filename" << EOF
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code Assertion" enabled="true">
             <collectionProp name="Asserion.test_strings">
               <stringProp name="49586">200</stringProp>
@@ -185,6 +175,7 @@ EOF
 }
 
 # Gerar todos os planos
+mkdir -p ../plans
 for endpoint in "${ENDPOINTS[@]}"; do
     for level in "${LEVELS[@]}"; do
         generate_plan "$endpoint" "$level"
@@ -192,14 +183,6 @@ for endpoint in "${ENDPOINTS[@]}"; do
 done
 
 echo ""
-echo "🎉 TODOS os planos foram gerados!"
-echo "📋 Total de planos criados: $(( ${#ENDPOINTS[@]} * ${#LEVELS[@]} ))"
-echo ""
-echo "📁 Planos disponíveis:"
-echo "   🔵 Carga Baixa: ${#ENDPOINTS[@]} planos"
-echo "   🟡 Carga Média: ${#ENDPOINTS[@]} planos"
-echo "   🟠 Carga Alta: ${#ENDPOINTS[@]} planos"
-echo "   🔴 Stress: ${#ENDPOINTS[@]} planos"
-echo "   🟣 Endurance: ${#ENDPOINTS[@]} planos"
-echo ""
-echo "🚀 Execute: ./scripts/run_load_scenarios.sh para testar todos os cenários" 
+echo "🎉 Planos SAS-SAS gerados!"
+echo "📁 Veja os arquivos em benchmark/jmeter/plans/"
+echo "" 

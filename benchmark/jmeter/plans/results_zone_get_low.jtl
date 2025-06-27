@@ -1,0 +1,51 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1750992270149,34,Zone GET SAS-SAS,200,OK,Zone GET Thread Group - Low 1-1,text,true,,206,134,1,1,http://localhost:8000/v1.3/zone/ZONE-001,30,0,20
+1750992270188,1,Zone GET SAS-SAS,200,OK,Zone GET Thread Group - Low 1-1,text,true,,206,134,1,1,http://localhost:8000/v1.3/zone/ZONE-001,1,0,0
+1750992270190,1,Zone GET SAS-SAS,200,OK,Zone GET Thread Group - Low 1-1,text,true,,206,134,1,1,http://localhost:8000/v1.3/zone/ZONE-001,1,0,0
+1750992270192,1,Zone GET SAS-SAS,200,OK,Zone GET Thread Group - Low 1-1,text,true,,206,134,1,1,http://localhost:8000/v1.3/zone/ZONE-001,1,0,0
+1750992270194,2,Zone GET SAS-SAS,200,OK,Zone GET Thread Group - Low 1-1,text,true,,206,134,1,1,http://localhost:8000/v1.3/zone/ZONE-001,2,0,0
+1750992275038,6,Zone GET SAS-SAS,200,OK,Zone GET Thread Group - Low 1-2,text,true,,206,134,1,1,http://localhost:8000/v1.3/zone/ZONE-001,6,0,1
+1750992275045,3,Zone GET SAS-SAS,200,OK,Zone GET Thread Group - Low 1-2,text,true,,206,134,1,1,http://localhost:8000/v1.3/zone/ZONE-001,3,0,0
+1750992275050,2,Zone GET SAS-SAS,200,OK,Zone GET Thread Group - Low 1-2,text,true,,206,134,1,1,http://localhost:8000/v1.3/zone/ZONE-001,2,0,0
+1750992275053,2,Zone GET SAS-SAS,200,OK,Zone GET Thread Group - Low 1-2,text,true,,206,134,1,1,http://localhost:8000/v1.3/zone/ZONE-001,2,0,0
+1750992275055,2,Zone GET SAS-SAS,200,OK,Zone GET Thread Group - Low 1-2,text,true,,206,134,1,1,http://localhost:8000/v1.3/zone/ZONE-001,2,0,0
+1750992669816,39,Zone GET SAS-SAS,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,Non HTTP response message: Connect to localhost:8000 [localhost/127.0.0.1] failed: Conexão recusada,Zone GET Thread Group - Low 1-1,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[Non HTTP response code: org.apache.http.conn.HttpHostConnectException]]]
+
+****** comparison: [[[200                                                                  ]]]
+
+/",2553,0,1,1,http://localhost:8000/v1.3/zone/ZONE-001,0,0,39
+1750992669882,2,Zone GET SAS-SAS,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,Non HTTP response message: Connect to localhost:8000 [localhost/127.0.0.1] failed: Conexão recusada,Zone GET Thread Group - Low 1-1,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[Non HTTP response code: org.apache.http.conn.HttpHostConnectException]]]
+
+****** comparison: [[[200                                                                  ]]]
+
+/",2553,0,1,1,http://localhost:8000/v1.3/zone/ZONE-001,0,0,2
+1750992669887,1,Zone GET SAS-SAS,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,Non HTTP response message: Connect to localhost:8000 [localhost/127.0.0.1] failed: Conexão recusada,Zone GET Thread Group - Low 1-1,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[Non HTTP response code: org.apache.http.conn.HttpHostConnectException]]]
+
+****** comparison: [[[200                                                                  ]]]
+
+/",2553,0,1,1,http://localhost:8000/v1.3/zone/ZONE-001,0,0,1
+1750992669891,1,Zone GET SAS-SAS,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,Non HTTP response message: Connect to localhost:8000 [localhost/127.0.0.1] failed: Conexão recusada,Zone GET Thread Group - Low 1-1,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[Non HTTP response code: org.apache.http.conn.HttpHostConnectException]]]
+
+****** comparison: [[[200                                                                  ]]]
+
+/",2553,0,1,1,http://localhost:8000/v1.3/zone/ZONE-001,0,0,1
+1750992669896,2,Zone GET SAS-SAS,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,Non HTTP response message: Connect to localhost:8000 [localhost/127.0.0.1] failed: Conexão recusada,Zone GET Thread Group - Low 1-1,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[Non HTTP response code: org.apache.http.conn.HttpHostConnectException]]]
+
+****** comparison: [[[200                                                                  ]]]
+
+/",2553,0,1,1,http://localhost:8000/v1.3/zone/ZONE-001,0,0,2
+1750992674702,12,Zone GET SAS-SAS,200,OK,Zone GET Thread Group - Low 1-2,text,true,,206,134,1,1,http://localhost:8000/v1.3/zone/ZONE-001,6,0,0
+1750992674715,2,Zone GET SAS-SAS,200,OK,Zone GET Thread Group - Low 1-2,text,true,,206,134,1,1,http://localhost:8000/v1.3/zone/ZONE-001,1,0,0
+1750992674717,2,Zone GET SAS-SAS,200,OK,Zone GET Thread Group - Low 1-2,text,true,,206,134,1,1,http://localhost:8000/v1.3/zone/ZONE-001,2,0,0
+1750992674719,2,Zone GET SAS-SAS,200,OK,Zone GET Thread Group - Low 1-2,text,true,,206,134,1,1,http://localhost:8000/v1.3/zone/ZONE-001,2,0,0
+1750992674721,2,Zone GET SAS-SAS,200,OK,Zone GET Thread Group - Low 1-2,text,true,,206,134,1,1,http://localhost:8000/v1.3/zone/ZONE-001,2,0,0
