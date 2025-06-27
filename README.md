@@ -1,311 +1,83 @@
-# SAS Blockchain Registry
+# SAS Registry (SAS-SAS Interface)
 
+Este projeto implementa um Spectrum Access System (SAS) tradicional, com interface compatível com o padrão WINNF SAS-SAS (TS-0096/3003), para fins de benchmarking e integração. Não há dependências de blockchain ou smart contracts.
 
+## Sumário
+- [Arquitetura](#arquitetura)
+- [Endpoints SAS-SAS](#endpoints-sas-sas)
+- [Setup do Serviço Python](#setup-do-serviço-python)
+- [Execução de Benchmarks JMeter](#execução-de-benchmarks-jmeter)
+- [Testes Automatizados](#testes-automatizados)
+
+---
 
 ## Arquitetura
 
 ```
-┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
-│   SAS System    │    │  Python API      │    │  EVM Blockchain │
-│                 │◄──►│  (FastAPI)       │◄──►│  (Ethereum/     │
-│                 │    │                  │    │   Polygon/      │
-│                 │    │                  │    │   Besu/etc.)    │
-└─────────────────┘    └──────────────────┘    └─────────────────┘
-                              │                           │
-                              │                           ▼
-                              │                  ┌─────────────────┐
-                              │                  │  Smart Contract │
-                              │                  │  SASShared      │
-                              │                  │  Registry.sol   │
-                              │                  │  (SAS-SAS)      │
-                              │                  └─────────────────┘
-                              │
-                              ▼
-                       ┌──────────────────┐
-                       │  Local Cache     │
-                       │  (Repository)    │
-                       └──────────────────┘
+┌───────────────┐    REST    ┌───────────────┐
+│   SAS Peer    │◄──────────►│   SAS Python  │
+└───────────────┘            └───────────────┘
 ```
 
-**Fluxo de Dados:**
-1. **SAS System** ↔ **Python API**: Comunicação via REST
-2. **Python API** ↔ **EVM Blockchain**: Interação via Web3
-3. **EVM Blockchain** ↔ **Smart Contract**: Execução de transações SAS-SAS
-4. **Python API** ↔ **Local Cache**: Armazenamento de estado
-
-## Funcionalidades do Smart Contract (SAS-SAS)
-
-### Interface SAS-SAS
-
-- **Registration**: Registro de dispositivos CBSD
-- **Grant**: Criação de grants de espectro
-- **Heartbeat**: Manutenção de grants ativos
-- **Relinquishment**: Liberação de grants
-- **Deregistration**: Remoção de dispositivos
-
-### Gestão de Autorização
-- **Autorizar SAS**: Permitir que um endereço execute operações SAS-SAS
-- **Verificar autorização**: Consultar se um SAS está autorizado
-- **Revogar SAS**: Remover autorização de um SAS
-
-### Eventos
-Cada operação SAS-SAS emite eventos com payloads JSON que podem ser consumidos por outros sistemas SAS para sincronização.
-
-## Setup do Smart Contract
-
-### Opção 1: Hardhat Node Local (Desenvolvimento)
-
-#### 1. Instalar Dependências
-```bash
-npm install
-```
-
-#### 2. Compilar e Testar Contrato
-```bash
-```
-
-#### 3. Iniciar Blockchain
-```bash
-```
-
-#### 4. Deploy do Contrato
-```bash
-```
-
-#### 5. Teste de Integração SAS-SAS
-```bash
-node scripts/integration-test-sas-simplified.js
-```
-
-Esse teste cobre:
-- Autorização e revogação de SAS
-- Todas as operações SAS-SAS (registration, grant, heartbeat, relinquishment, deregistration)
-- Verificação de acesso negado para SAS não autorizado
-- Emissão de eventos
-
-### Opção 2: Deploy em Qualquer Rede Besu (Produção/Teste)
-
-Você pode usar qualquer rede compatível com Besu (ex: Hyperledger Besu local, testnet, mainnet privada, etc). Após iniciar sua rede Besu, siga os passos abaixo:
-
-#### 1. Configure o ambiente para apontar para o RPC da sua rede Besu
-
-```env
-RPC_URL=http://127.0.0.1:8545 # ou o endpoint da sua rede
-CHAIN_ID=<chain_id_da_rede>
-OWNER_PRIVATE_KEY=<chave_privada_do_owner>
-```
-
-
-```bash
-```
-
-
+- **SAS Python**: Serviço FastAPI/SQLAlchemy, persistência local (SQLite ou outro DB relacional).
+- **Compatível com JMeter**: Endpoints e payloads compatíveis com planos de benchmark WINNF SAS-SAS.
 
 ---
 
-## Verificação de Conectividade com a Rede
+## Endpoints SAS-SAS
 
-Antes de prosseguir, verifique se sua rede Besu está acessível e funcional:
+- `GET /v1.3/cbsd/{id}`: Consulta informações de um CBSD
+- `POST /v1.3/cbsd/{id}`: Atualiza informações de um CBSD
+- `GET /v1.3/zone/{id}`: Consulta informações de uma zona
+- `POST /v1.3/zone/{id}`: Atualiza informações de uma zona
+- `GET /v1.3/dump`: Retorna dump de dados SAS
 
-**Verificar versão do cliente:**
-```bash
-curl -X POST \
-  --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":1}' \
-  -H 'Content-Type: application/json' \
-  http://localhost:8545
-```
-
-**Verificar número de peers:**
-```bash
-curl -X POST \
-  --data '{"jsonrpc":"2.0","method":"net_peerCount","params":[],"id":1}' \
-  -H 'Content-Type: application/json' \
-  http://localhost:8545
-```
-
-**Verificar número do bloco:**
-```bash
-curl -X POST \
-  --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}' \
-  -H 'Content-Type: application/json' \
-  http://localhost:8545
-```
+Todos os endpoints aceitam/retornam JSON conforme especificação WINNF.
 
 ---
 
-
-
-
-2. Descubra o selector da função (ex: `owner()` → `0x8da5cb5b`).
+## Setup do Serviço Python
 
 ```bash
-curl -X POST \
-  --data '{
-    "jsonrpc":"2.0",
-    "method":"eth_call",
-    "params":[{
-      "to": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
-      "data": "0x8da5cb5b"
-    }, "latest"],
-    "id":1
-  }' \
-  -H 'Content-Type: application/json' \
-  http://localhost:8545
-```
-
-O resultado será o endereço do owner em hexadecimal.
-
-
-## Setup do Middleware
-
-### 5. Configurar Ambiente Python
-```bash
-cd middleware
+cd sas-service
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
-```
-
-### 6. Configurar Variáveis de Ambiente
-```bash
-cp env.example .env
-```
-
-**Ajuste as variáveis principais no `.env` conforme o deploy:**
-```env
-RPC_URL=http://127.0.0.1:8545
-CONTRACT_ADDRESS=0x5FbDB2315678afecb367f032d93F642f64180aa3
-OWNER_PRIVATE_KEY=0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80
-CHAIN_ID=31337
-```
-
-
-### 7. Iniciar API
-```bash
 python3 run.py
 ```
 
-### 8. Testar Middleware
+O serviço estará disponível em `http://localhost:8000`.
+
+---
+
+## Execução de Benchmarks JMeter
+
+Os planos JMeter estão em `benchmark/jmeter/plans/`.
+
+Exemplo de execução:
 ```bash
-./scripts/test_api.sh
+cd benchmark/jmeter/scripts
+jmeter -n -t ../plans/sas_sas_zone_get_low.jmx -l ../plans/results_zone_get_low.jtl
 ```
 
-## Testes de Integração do Contrato
+Resultados são salvos em arquivos `.jtl` para análise posterior.
 
+---
 
+## Testes Automatizados
+
+Testes unitários e de integração estão em `sas-service/` e `middleware/tests/`.
+
+Exemplo de execução:
 ```bash
-node scripts/integration-test-sas-simplified.js
+cd sas-service
+pytest
 ```
 
-Esse teste cobre:
-- Autorização e revogação de SAS
-- Todas as operações SAS-SAS (registration, grant, heartbeat, relinquishment, deregistration)
-- Verificação de acesso negado para SAS não autorizado
-- Emissão de eventos com payloads JSON
+---
 
-## Testes com cURL
+## Observações
+- Este projeto não utiliza blockchain, smart contracts ou qualquer dependência Ethereum/Besu.
+- Foco total em benchmarking e interoperabilidade SAS-SAS.
 
-### Health Check
-```bash
-curl http://localhost:8000/health | jq
-```
-
-### Autorizar SAS
-```bash
-curl -X POST http://localhost:8000/sas/authorize \
-  -H "Content-Type: application/json" \
-  -d '{"sas_address": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8"}' | jq
-```
-
-### Verificar Autorização SAS
-```bash
-curl http://localhost:8000/sas/0x70997970C51812dc3A010C7d01b50e0d17dc79C8/authorized | jq
-```
-
-### Operação SAS-SAS (Registration)
-```bash
-curl -X POST http://localhost:8000/sas/registration \
-  -H "Content-Type: application/json" \
-  -d '{
-    "fccId": "TEST-FCC-001",
-    "userId": "TEST-USER-001",
-    "cbsdSerialNumber": "TEST-SN-001",
-    "callSign": "TESTCALL",
-    "cbsdCategory": "A",
-    "airInterface": "E_UTRA",
-    "measCapability": ["EUTRA_CARRIER_RSSI"],
-    "eirpCapability": 47,
-    "latitude": 375000000,
-    "longitude": 1224000000,
-    "height": 30,
-    "heightType": "AGL",
-    "indoorDeployment": false,
-    "antennaGain": 15,
-    "antennaBeamwidth": 360,
-    "antennaAzimuth": 0,
-    "groupingParam": "",
-    "cbsdAddress": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"
-  }' | jq
-```
-
-### Eventos Recentes
-```bash
-curl http://localhost:8000/events/recent | jq
-```
-
-## Estrutura do Projeto
-
-```
-SAS-Blockchain-Registry/
-├── contracts/
-│   ├── SASSharedRegistry.sol    # Smart contract SAS-SAS
-│   └── Lock.sol                 # Contrato de exemplo
-├── middleware/                  # API Python (documentação separada)
-├── scripts/
-│   ├── deploy-sas-shared-registry.js           # Deploy Hardhat
-│   └── integration-test-sas-simplified.js      # Teste SAS-SAS
-├── test/
-│   └── SASSharedRegistry.js     # Testes unitários
-└── README.md                    # Este arquivo
-```
-
-## Testes
-
-### Testes Unitários (Smart Contract)
-```bash
-```
-
-### Testes de Integração (SAS-SAS)
-```bash
-node scripts/integration-test-sas-simplified.js
-```
-
-## Configurações
-
-### Endereços de Teste (Hardhat)
-- **SAS de Teste:** `0x70997970C51812dc3A010C7d01b50e0d17dc79C8`
-- **Owner:** `0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266`
-
-## Troubleshooting
-
-### Verificar se o nó está rodando
-```bash
-curl -X POST -H "Content-Type: application/json" \
-  --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}' \
-  http://127.0.0.1:8545
-```
-
-### Verificar chainId
-```bash
-curl -X POST -H "Content-Type: application/json" \
-  --data '{"jsonrpc":"2.0","method":"eth_chainId","params":[],"id":1}' \
-  http://127.0.0.1:8545
-```
-
-## Middleware
-
-> **Nota:** O middleware Python com API REST está disponível na pasta `middleware/` e será documentado separadamente.
-
-## Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+---
