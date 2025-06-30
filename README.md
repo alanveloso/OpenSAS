@@ -1,223 +1,154 @@
-# SAS (Spectrum Access System)
+# OpenSAS - Spectrum Access System
 
-Sistema SAS (Spectrum Access System) implementado como um serviço web compatível com WINNF TS-0096/3003 (SAS-SAS) e WINNF TS-0016 (SAS-CBSD).
+Sistema de Acesso ao Espectro (SAS) compatível com WINNF TS-0096/3003 (SAS-SAS).
 
-## 🎯 Objetivo
+## 🚀 Funcionalidades
 
-Este SAS implementa:
-- **Interface pública SAS-SAS** (WINNF TS-0096/3003): para comunicação entre sistemas SAS.
-- **Interface administrativa interna**: para controle e gestão do sistema.
-- **(Opcional) Interface SAS-CBSD**: para integração com CBSDs, se necessário.
+### Endpoints Implementados
 
-## 🏗️ Arquitetura
+#### Endpoints Públicos (WINNF TS-0096)
+- **POST /v1.3/registration** - Registro de CBSD
+- **POST /v1.3/grant** - Solicitação de grant de espectro
+- **GET /v1.3/cbsd/{cbsd_id}** - Obter registro CBSD
+- **POST /v1.3/cbsd/{cbsd_id}** - Atualizar registro CBSD
+- **GET /v1.3/zone/{zone_id}** - Obter registro de zona
+- **POST /v1.3/zone/{zone_id}** - Atualizar registro de zona
+- **GET /v1.3/dump** - Full activity dump
 
-```
-┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
-│   Outro SAS     │    │  SAS Service     │    │  Database       │
-│                 │◄──►│  (FastAPI)       │◄──►│  (PostgreSQL/   │
-│                 │    │                  │    │   SQLite)       │
-│                 │    │                  │    │                 │
-└─────────────────┘    └──────────────────┘    └─────────────────┘
-                              │
-                              ▼
-                       ┌──────────────────┐
-                       │  Cache Layer     │
-                       │  (Redis)         │
-                       └──────────────────┘
-```
+#### Endpoints Administrativos
+- **POST /sas/authorize** - Autorizar SAS
+- **POST /sas/revoke** - Revogar SAS
+- **GET /sas/{sas_address}/authorized** - Verificar autorização SAS
 
-## 🚀 Interfaces Disponíveis
+#### Endpoints de Monitoramento
+- **GET /health** - Health check
+- **GET /stats** - Estatísticas do sistema
+- **GET /events/recent** - Eventos recentes
 
-### 1. Interface Pública SAS-SAS (WINNF TS-0096/3003)
-> **Apenas estes endpoints devem ser expostos para comunicação entre SASs.**
+## 📋 Pré-requisitos
 
-- `GET /v1.3/cbsd/{id}` — Obter registro CBSD
-- `POST /v1.3/cbsd/{id}` — Atualizar/criar registro CBSD
-- `GET /v1.3/zone/{id}` — Obter registro de zona
-- `POST /v1.3/zone/{id}` — Atualizar/criar registro de zona
-- `GET /v1.3/dump` — Full activity dump
+- Python 3.8+
+- pip
+- SQLite (incluído no Python)
 
-> **Obs:** Expanda para outros tipos (ex: `/coordination`, `/zone`, `/dump`) conforme o padrão WINNF.
+## 🛠️ Instalação
 
-### 2. Interface Administrativa Interna (NÃO faz parte do padrão WINNF SAS-SAS)
-> **Apenas para uso interno/administração.**
-
-- `POST /sas/authorize` — Autorizar SAS
-- `POST /sas/revoke` — Revogar SAS
-- `GET /sas/{sas_address}/authorized` — Verificar autorização de SAS
-
-### 3. Monitoramento (opcional)
-- `GET /health` — Health check
-- `GET /stats` — Estatísticas do sistema
-- `GET /events/recent` — Eventos recentes
-
-### 4. (Opcional) Interface SAS-CBSD (WINNF TS-0016)
-> **Não faz parte da interface SAS-SAS.**
-
-- `POST /v1.3/registration`, `/grant`, `/heartbeat`, `/relinquishment`, `/deregistration`, ...
-
-## ❗️ Diferença entre SAS-SAS e SAS-CBSD
-
-| Interface         | Especificação         | Caminhos padrão SAS-SAS                | Caminhos padrão SAS-CBSD           |
-|-------------------|----------------------|----------------------------------------|------------------------------------|
-| SAS ↔ SAS         | WINNF-TS-0096/3003   | `/v1.3/cbsd/{id}`, `/zone/{id}`, ...   | —                                  |
-| SAS ↔ CBSD        | WINNF-TS-0016        | —                                      | `/v1.3/registration`, `/grant`, ...|
-
-- **SAS-SAS:** GET e POST, caminhos por tipo de registro (ex: `/cbsd/{id}`), comunicação entre SASs.
-- **SAS-CBSD:** Apenas POST, caminhos por operação (ex: `/registration`), comunicação com dispositivos.
-
-## 🛠️ Setup
-
+1. Clone o repositório:
 ```bash
-cd sas-service
-python3 -m venv venv
-source venv/bin/activate
+git clone <repository-url>
+cd OpenSAS
+```
+
+2. Instale as dependências:
+```bash
 pip install -r requirements.txt
-python manage.py init
+```
+
+3. Execute as migrações do banco de dados:
+```bash
+python manage.py migrate
+```
+
+## 🚀 Execução
+
+### Desenvolvimento
+```bash
 python run.py
 ```
 
-## 📚 Exemplos de Uso (SAS-SAS)
-
-**Obter registro CBSD:**
+### Produção
 ```bash
-curl http://localhost:8000/v1.3/cbsd/TEST-SN-001
+gunicorn src.api.main:app -w 4 -k uvicorn.workers.UvicornWorker --bind 0.0.0.0:9000
 ```
 
-**Atualizar/criar registro CBSD:**
-```bash
-curl -X POST http://localhost:8000/v1.3/cbsd/TEST-SN-001 \
-  -H "Content-Type: application/json" \
-  -d '{
-    "id": "TEST-SN-001",
-    "fccId": "TEST-FCC-001",
-    "userId": "TEST-USER-001",
-    "cbsdSerialNumber": "TEST-SN-001",
-    "callSign": "TESTCALL",
-    "cbsdCategory": "A",
-    "airInterface": "E_UTRA",
-    "measCapability": ["EUTRA_CARRIER_RSSI"],
-    "eirpCapability": 47,
-    "latitude": 375000000,
-    "longitude": 1224000000,
-    "height": 30,
-    "heightType": "AGL",
-    "indoorDeployment": false,
-    "antennaGain": 15,
-    "antennaBeamwidth": 360,
-    "antennaAzimuth": 0,
-    "groupingParam": "",
-    "cbsdIdentifier": "CBSD-TEST-001"
-  }'
-```
+A API estará disponível em:
+- **API**: http://localhost:9000
+- **Documentação**: http://localhost:9000/docs
+- **Health Check**: http://localhost:9000/health
 
-**Obter registro de zona:**
-```bash
-curl http://localhost:8000/v1.3/zone/ZONE-001
-```
+## 🧪 Benchmarks JMeter
 
-**Full activity dump:**
-```bash
-curl http://localhost:8000/v1.3/dump
-```
-
-## 🔒 Interface Administrativa (exemplo)
-```bash
-curl -X POST http://localhost:8000/sas/authorize -H "Content-Type: application/json" -d '{"sas_address": "0x123..."}'
-curl http://localhost:8000/sas/0x123.../authorized
-```
-
-## 📝 Observações
-- **Apenas a interface SAS-SAS deve ser exposta para outros SASs.**
-- Endpoints administrativos e SAS-CBSD são para uso interno ou integração opcional.
-- Consulte a especificação WINNF TS-0096/3003 para detalhes completos dos endpoints SAS-SAS.
-
-## 🔗 Links Úteis
-- [WINNF TS-0096/3003 (SAS-SAS)](https://winnforum.org/) 
-- [WINNF TS-0016 (SAS-CBSD)](https://winnforum.org/) 
-
-## 🧪 Testes de Performance
+O projeto inclui benchmarks JMeter para testar a performance dos endpoints.
 
 ### Executar Benchmarks
+
+1. Certifique-se de que o JMeter está instalado
+2. Execute todos os benchmarks:
 ```bash
-# Usar JMeter ou similar para testes de carga
-jmeter -n -t test_plan.jmx -l results.jtl
+bash scripts/run_all_benchmarks.sh
 ```
 
-### Métricas de Performance
-- **Throughput**: Requisições/segundo
-- **Response Time**: Tempo médio de resposta
-- **Error Rate**: Taxa de erro
-- **CPU/Memory**: Uso de recursos
+Os resultados serão salvos em subpastas dentro de `results/` para cada cenário (low, medium, high, stress). A cada execução, a pasta anterior é movida para backup automaticamente.
+
+#### Níveis de Carga
+- **Low**: 2 usuários, 5 iterações
+- **Medium**: 10 usuários, 10 iterações
+- **High**: 50 usuários, 20 iterações
+- **Stress**: 200 usuários, 50 iterações
+
+## 📊 Estrutura do Projeto
+
+```
+OpenSAS/
+├── src/
+│   ├── api/
+│   │   └── main.py              # Endpoints da API
+│   ├── config/
+│   │   └── settings.py          # Configurações
+│   └── models/
+│       ├── database.py          # Configuração do banco
+│       ├── cbsd.py             # Modelo CBSD
+│       ├── grant.py            # Modelo Grant
+│       ├── sas_auth.py         # Modelo SAS Authorization
+│       └── event.py            # Modelo Event
+├── scripts/
+│   └── run_all_benchmarks.sh   # Script para rodar todos os benchmarks
+├── requirements.txt
+├── run.py                      # Script de execução da API
+├── manage.py                   # Script de administração do banco
+```
 
 ## 🔧 Configuração
 
-### Variáveis de Ambiente (.env)
-```env
-# Servidor
-HOST=0.0.0.0
-PORT=8000
-DEBUG=false
+As configurações podem ser alteradas no arquivo `src/config/settings.py` ou através de variáveis de ambiente:
 
-# Banco de Dados
-DATABASE_URL=sqlite:///./sas_service.db
-# DATABASE_URL=postgresql://user:pass@localhost/sas_db
+- `HOST`: Host do servidor (padrão: 0.0.0.0)
+- `PORT`: Porta do servidor (padrão: 9000)
+- `DEBUG`: Modo debug (padrão: False)
+- `DATABASE_URL`: URL do banco de dados
+- `LOG_LEVEL`: Nível de log (padrão: INFO)
 
-# Cache
-REDIS_URL=redis://localhost:6379
-CACHE_TTL=300
+## 📝 Modelos de Dados
 
-# Logging
-LOG_LEVEL=INFO
-LOG_FILE=logs/sas_service.log
+### CBSD (Citizen Broadband Radio Service Device)
+- Identificação FCC
+- Número de série
+- Categoria (A ou B)
+- Interface aérea
+- Capacidades de medição
+- Localização (latitude, longitude, altura)
+- Parâmetros da antena
 
-# Performance
-WORKERS=4
-MAX_CONNECTIONS=1000
-```
+### Grant (Concessão de Espectro)
+- ID único da concessão
+- Tipo de canal (GAA, PAL)
+- Frequências (baixa, alta)
+- Potência máxima (EIRP)
+- Tempo de expiração
+- Estado (GRANTED, AUTHORIZED, TERMINATED)
 
-## 📁 Estrutura do Projeto
+## 🤝 Contribuição
 
-```
-sas-service/
-├── src/
-│   ├── api/              # API REST FastAPI
-│   ├── models/           # Modelos de dados
-│   ├── services/         # Lógica de negócio
-│   ├── database/         # Camada de dados
-│   ├── cache/            # Camada de cache
-│   └── utils/            # Utilitários
-├── tests/                # Testes unitários
-├── scripts/              # Scripts utilitários
-├── logs/                 # Logs da aplicação
-├── data/                 # Dados de exemplo
-├── requirements.txt      # Dependências
-├── run.py               # Ponto de entrada
-└── README.md            # Este arquivo
-```
+1. Fork o projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
 
-## 🎯 Próximos Passos
+## 📄 Licença
 
-1. **Implementar autenticação JWT**
-2. **Adicionar rate limiting**
-3. **Implementar métricas Prometheus**
-4. **Containerização com Docker**
-5. **Deploy em Kubernetes**
-6. **Certificação WINNF**
+Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
 
-## 📊 Especificações Técnicas
+## 🆘 Suporte
 
-### CBRS Band
-- **Frequência**: 3550-3700 MHz
-- **Canais**: GAA (General Authorized Access) e PAL (Priority Access License)
-- **EIRP**: Até 47 dBm/MHz
-
-### CBSD Categories
-- **Category A**: Dispositivos de baixa potência (≤ 30 dBm/MHz)
-- **Category B**: Dispositivos de alta potência (≤ 47 dBm/MHz)
-
-## 🔗 Links Úteis
-
-- [Documentação da API](docs/API.md)
-- [Guia de Performance](docs/PERFORMANCE.md)
-- [Especificações WINNF](https://winnforum.org/) 
+Para suporte, abra uma issue no repositório ou entre em contato com a equipe de desenvolvimento. 

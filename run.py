@@ -18,8 +18,8 @@ if __name__ == "__main__":
     print(f"🔌 Porta: {settings.port}")
     print(f"🐛 Debug: {settings.debug}")
     print("")
-    print("🌐 API disponível em: http://localhost:8000")
-    print("📚 Documentação: http://localhost:8000/docs")
+    print("🌐 API disponível em: http://localhost:9000")
+    print("📚 Documentação: http://localhost:9000/docs")
     print("")
     
     uvicorn.run(
