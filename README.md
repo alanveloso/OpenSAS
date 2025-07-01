@@ -151,4 +151,27 @@ Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICE
 
 ## 🆘 Suporte
 
-Para suporte, abra uma issue no repositório ou entre em contato com a equipe de desenvolvimento. 
+Para suporte, abra uma issue no repositório ou entre em contato com a equipe de desenvolvimento.
+
+## 🗂️ Organização dos Resultados por Tipo de Requisição
+
+Após rodar os benchmarks, você pode organizar os resultados `.jtl` em subpastas por tipo de requisição (ex: Authorize, Registration, Grant, etc.) usando o script:
+
+```bash
+python3 scripts/organize_results_by_request_type.py
+```
+
+Esse script percorre todas as pastas em `results/`, lê cada arquivo `.jtl` e separa as linhas por tipo de requisição (coluna `label`). Para cada tipo, é criada uma subpasta dentro do cenário correspondente, contendo um arquivo `.jtl` apenas com as linhas daquele tipo. O arquivo original é mantido intacto.
+
+Exemplo de estrutura após rodar o script:
+
+```
+results/
+  sas_full_flow_high/
+    run_1_20250701_091324.jtl
+    Authorize/
+      run_1_20250701_091324.jtl
+    Registration/
+      run_1_20250701_091324.jtl
+    ...
+``` 
