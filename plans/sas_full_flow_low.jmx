@@ -1,35 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jmeterTestPlan version="1.2" properties="5.0" jmeter="5.6.3">
   <hashTree>
-    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="SAS Full Flow" enabled="true">
-      <stringProp name="TestPlan.comments">Plano único para registration, grant, relinquishment e deregistration com variáveis globais únicas</stringProp>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="SAS Full Flow Low Simple Fixed" enabled="true">
+      <stringProp name="TestPlan.comments">Plano Low simples com dados fixos por thread</stringProp>
       <boolProp name="TestPlan.functional_mode">false</boolProp>
       <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
       <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
-      <elementProp name="TestPlan.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
-        <collectionProp name="Arguments.arguments">
-          <elementProp name="test_fccId" elementType="Argument">
-            <stringProp name="Argument.name">test_fccId</stringProp>
-            <stringProp name="Argument.value">FCC-${__UUID}</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="test_userId" elementType="Argument">
-            <stringProp name="Argument.name">test_userId</stringProp>
-            <stringProp name="Argument.value">USER-${__UUID}</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="test_cbsdSerialNumber" elementType="Argument">
-            <stringProp name="Argument.name">test_cbsdSerialNumber</stringProp>
-            <stringProp name="Argument.value">CBSD-${__UUID}</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="test_sasAddress" elementType="Argument">
-            <stringProp name="Argument.name">test_sasAddress</stringProp>
-            <stringProp name="Argument.value">0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-        </collectionProp>
-      </elementProp>
       <stringProp name="TestPlan.user_define_classpath"></stringProp>
     </TestPlan>
     <hashTree>
@@ -37,10 +13,10 @@
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">5</stringProp>
+          <stringProp name="LoopController.loops">10</stringProp>
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">2</stringProp>
-        <stringProp name="ThreadGroup.ramp_time">10</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">0</stringProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration"></stringProp>
         <stringProp name="ThreadGroup.delay">0</stringProp>
@@ -53,12 +29,12 @@
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{"sas_address":"${test_sasAddress}"}</stringProp>
+                <stringProp name="Argument.value">{"sas_address":"0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">10.126.1.237</stringProp>
+          <stringProp name="HTTPSampler.domain">localhost</stringProp>
           <stringProp name="HTTPSampler.port">9000</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.path">/sas/authorize</stringProp>
@@ -85,12 +61,12 @@
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{"fccId":"${test_fccId}","userId":"${test_userId}","cbsdSerialNumber":"${test_cbsdSerialNumber}","callSign":"CALL1","cbsdCategory":"A","airInterface":"LTE","measCapability":["CAT_A"],"eirpCapability":30,"latitude":10,"longitude":20,"height":5,"heightType":"AGL","indoorDeployment":false,"antennaGain":15,"antennaBeamwidth":60,"antennaAzimuth":90,"groupingParam":"group1","cbsdAddress":"ADDR1"}</stringProp>
+                <stringProp name="Argument.value">{"fccId":"FCC-LOW-T${__threadNum}","userId":"USER-LOW-T${__threadNum}","cbsdSerialNumber":"CBSD-LOW-T${__threadNum}","callSign":"CALL1","cbsdCategory":"A","airInterface":"LTE","measCapability":["CAT_A"],"eirpCapability":30,"latitude":10,"longitude":20,"height":5,"heightType":"AGL","indoorDeployment":false,"antennaGain":15,"antennaBeamwidth":60,"antennaAzimuth":90,"groupingParam":"group1","cbsdAddress":"ADDR1"}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">10.126.1.237</stringProp>
+          <stringProp name="HTTPSampler.domain">localhost</stringProp>
           <stringProp name="HTTPSampler.port">9000</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.path">/v1.3/registration</stringProp>
@@ -109,7 +85,7 @@
               </elementProp>
               <elementProp name="" elementType="Header">
                 <stringProp name="Header.name">X-SAS-Address</stringProp>
-                <stringProp name="Header.value">${test_sasAddress}</stringProp>
+                <stringProp name="Header.value">0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266</stringProp>
               </elementProp>
             </collectionProp>
           </HeaderManager>
@@ -121,12 +97,12 @@
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{"fccId":"${test_fccId}","cbsdSerialNumber":"${test_cbsdSerialNumber}","channelType":"GAA","maxEirp":30,"lowFrequency":3550000000,"highFrequency":3560000000,"requestedMaxEirp":30,"requestedLowFrequency":3550000000,"requestedHighFrequency":3560000000,"grantExpireTime":9999999999}</stringProp>
+                <stringProp name="Argument.value">{"fccId":"FCC-LOW-T${__threadNum}","cbsdSerialNumber":"CBSD-LOW-T${__threadNum}","channelType":"GAA","maxEirp":30,"lowFrequency":3550000000,"highFrequency":3560000000,"requestedMaxEirp":30,"requestedLowFrequency":3550000000,"requestedHighFrequency":3560000000,"grantExpireTime":9999999999}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">10.126.1.237</stringProp>
+          <stringProp name="HTTPSampler.domain">localhost</stringProp>
           <stringProp name="HTTPSampler.port">9000</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.path">/v1.3/grant</stringProp>
@@ -145,7 +121,7 @@
               </elementProp>
               <elementProp name="" elementType="Header">
                 <stringProp name="Header.name">X-SAS-Address</stringProp>
-                <stringProp name="Header.value">${test_sasAddress}</stringProp>
+                <stringProp name="Header.value">0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266</stringProp>
               </elementProp>
             </collectionProp>
           </HeaderManager>
@@ -166,12 +142,12 @@
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{"fccId":"${test_fccId}","cbsdSerialNumber":"${test_cbsdSerialNumber}","grantId":"${grantId}"}</stringProp>
+                <stringProp name="Argument.value">{"fccId":"FCC-LOW-T${__threadNum}","cbsdSerialNumber":"CBSD-LOW-T${__threadNum}","grantId":"${grantId}"}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">10.126.1.237</stringProp>
+          <stringProp name="HTTPSampler.domain">localhost</stringProp>
           <stringProp name="HTTPSampler.port">9000</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.path">/v1.3/relinquishment</stringProp>
@@ -190,7 +166,7 @@
               </elementProp>
               <elementProp name="" elementType="Header">
                 <stringProp name="Header.name">X-SAS-Address</stringProp>
-                <stringProp name="Header.value">${test_sasAddress}</stringProp>
+                <stringProp name="Header.value">0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266</stringProp>
               </elementProp>
             </collectionProp>
           </HeaderManager>
@@ -202,12 +178,12 @@
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{"fccId":"${test_fccId}","cbsdSerialNumber":"${test_cbsdSerialNumber}"}</stringProp>
+                <stringProp name="Argument.value">{"fccId":"FCC-LOW-T${__threadNum}","cbsdSerialNumber":"CBSD-LOW-T${__threadNum}"}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">10.126.1.237</stringProp>
+          <stringProp name="HTTPSampler.domain">localhost</stringProp>
           <stringProp name="HTTPSampler.port">9000</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.path">/v1.3/deregistration</stringProp>
@@ -226,7 +202,7 @@
               </elementProp>
               <elementProp name="" elementType="Header">
                 <stringProp name="Header.name">X-SAS-Address</stringProp>
-                <stringProp name="Header.value">${test_sasAddress}</stringProp>
+                <stringProp name="Header.value">0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266</stringProp>
               </elementProp>
             </collectionProp>
           </HeaderManager>
@@ -238,12 +214,12 @@
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{"sas_address":"${test_sasAddress}"}</stringProp>
+                <stringProp name="Argument.value">{"sas_address":"0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">10.126.1.237</stringProp>
+          <stringProp name="HTTPSampler.domain">localhost</stringProp>
           <stringProp name="HTTPSampler.port">9000</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.path">/sas/revoke</stringProp>
