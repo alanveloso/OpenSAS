@@ -4,6 +4,7 @@ from pydantic import BaseModel
 from typing import Dict, List, Optional, Any
 import logging
 import json
+import os
 from datetime import datetime, timezone
 from sqlalchemy.orm import Session
 import uuid
@@ -17,7 +18,13 @@ from src.models.event import Event
 from src.config.settings import settings
 
 # Configurar logging
-logging.basicConfig(level=getattr(logging, settings.log_level))
+logging.basicConfig(
+    level=getattr(logging, settings.log_level),
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.StreamHandler()  # Console handler
+    ]
+)
 logger = logging.getLogger(__name__)
 
 # Inicializar FastAPI
@@ -137,22 +144,57 @@ async def registration(
     db: Session = Depends(get_db)
 ):
     """Registro de CBSD - Alinhado com contrato Solidity"""
+    logger.info(f"=== REGISTRATION REQUEST ===")
+    logger.info(f"SAS Address: {sas_address}")
+    logger.info(f"FCC ID: {request.fccId}")
+    logger.info(f"User ID: {request.userId}")
+    logger.info(f"CBSD Serial: {request.cbsdSerialNumber}")
+    logger.info(f"Thread: {request.fccId.split('-')[1] if '-' in request.fccId else 'N/A'}")
+    
     try:
         # Verificar se SAS está autorizado
+        logger.info(f"Verificando autorização SAS: {sas_address}")
         if not await verify_sas_authorization(sas_address, db):
+            logger.error(f"SAS não autorizado: {sas_address}")
             raise HTTPException(status_code=403, detail="SAS não autorizado")
+        logger.info(f"SAS autorizado: {sas_address}")
         
         # Gerar chave CBSD
         cbsd_key = generate_cbsd_key(request.fccId, request.cbsdSerialNumber)
+        logger.info(f"Chave CBSD gerada: {cbsd_key}")
         
         # Verificar se CBSD já existe
+        logger.info(f"Verificando se CBSD já existe: {request.fccId}/{request.cbsdSerialNumber}")
         existing_cbsd = db.query(CBSD).filter(
             CBSD.fcc_id == request.fccId,
             CBSD.cbsd_serial_number == request.cbsdSerialNumber
         ).first()
         
         if existing_cbsd:
+            logger.warning(f"CBSD já existe: {request.fccId}/{request.cbsdSerialNumber}")
             raise HTTPException(status_code=400, detail="CBSD já existe")
+        logger.info(f"CBSD não existe, prosseguindo com registro")
+        
+        # Log dos dados recebidos para debug
+        logger.info(f"Dados do request:")
+        logger.info(f"  fccId: '{request.fccId}' (tamanho: {len(request.fccId)})")
+        logger.info(f"  userId: '{request.userId}' (tamanho: {len(request.userId)})")
+        logger.info(f"  cbsdSerialNumber: '{request.cbsdSerialNumber}' (tamanho: {len(request.cbsdSerialNumber)})")
+        logger.info(f"  callSign: '{request.callSign}'")
+        logger.info(f"  cbsdCategory: '{request.cbsdCategory}'")
+        logger.info(f"  airInterface: '{request.airInterface}'")
+        logger.info(f"  measCapability: {request.measCapability}")
+        logger.info(f"  eirpCapability: {request.eirpCapability}")
+        logger.info(f"  latitude: {request.latitude}")
+        logger.info(f"  longitude: {request.longitude}")
+        logger.info(f"  height: {request.height}")
+        logger.info(f"  heightType: '{request.heightType}'")
+        logger.info(f"  indoorDeployment: {request.indoorDeployment}")
+        logger.info(f"  antennaGain: {request.antennaGain}")
+        logger.info(f"  antennaBeamwidth: {request.antennaBeamwidth}")
+        logger.info(f"  antennaAzimuth: {request.antennaAzimuth}")
+        logger.info(f"  groupingParam: '{request.groupingParam}'")
+        logger.info(f"  cbsdAddress: '{request.cbsdAddress}'")
         
         # Criar novo CBSD
         current_timestamp = int(time.time())
@@ -194,6 +236,10 @@ async def registration(
         db.add(event)
         db.commit()
         
+        logger.info(f"Registro CBSD criado com sucesso: {request.cbsdSerialNumber}")
+        logger.info(f"Evento registrado: CBSD_REGISTERED")
+        logger.info(f"=== REGISTRATION SUCCESS ===")
+        
         return RegistrationResponse(
             cbsdId=request.cbsdSerialNumber,
             registrationResponse={
@@ -202,10 +248,11 @@ async def registration(
             }
         )
         
-    except HTTPException:
+    except HTTPException as he:
+        logger.error(f"HTTPException no registro: {he.status_code} - {he.detail}")
         raise
     except Exception as e:
-        logger.error(f"Erro no registro: {str(e)}")
+        logger.error(f"Erro interno no registro: {str(e)}")
         db.rollback()
         raise HTTPException(status_code=500, detail="Erro interno no registro")
 
@@ -216,12 +263,22 @@ async def grant(
     db: Session = Depends(get_db)
 ):
     """Solicitação de grant - Alinhado com contrato Solidity"""
+    logger.info(f"=== GRANT REQUEST ===")
+    logger.info(f"SAS Address: {sas_address}")
+    logger.info(f"FCC ID: {request.fccId}")
+    logger.info(f"CBSD Serial: {request.cbsdSerialNumber}")
+    logger.info(f"Channel Type: {request.channelType}")
+    
     try:
         # Verificar se SAS está autorizado
+        logger.info(f"Verificando autorização SAS: {sas_address}")
         if not await verify_sas_authorization(sas_address, db):
+            logger.error(f"SAS não autorizado: {sas_address}")
             raise HTTPException(status_code=403, detail="SAS não autorizado")
+        logger.info(f"SAS autorizado: {sas_address}")
         
         # Verificar se CBSD existe
+        logger.info(f"Verificando se CBSD existe: {request.fccId}/{request.cbsdSerialNumber}")
         cbsd = db.query(CBSD).filter(
             CBSD.fcc_id == request.fccId,
             CBSD.cbsd_serial_number == request.cbsdSerialNumber
@@ -269,6 +326,10 @@ async def grant(
         db.add(event)
         db.commit()
         
+        logger.info(f"Grant criado com sucesso: {grant_id}")
+        logger.info(f"Evento registrado: GRANT_CREATED")
+        logger.info(f"=== GRANT SUCCESS ===")
+        
         return GrantResponse(
             cbsdId=request.cbsdSerialNumber,
             grantResponse={
@@ -283,10 +344,11 @@ async def grant(
             }
         )
         
-    except HTTPException:
+    except HTTPException as he:
+        logger.error(f"HTTPException no grant: {he.status_code} - {he.detail}")
         raise
     except Exception as e:
-        logger.error(f"Erro na solicitação de grant: {str(e)}")
+        logger.error(f"Erro interno na solicitação de grant: {str(e)}")
         db.rollback()
         raise HTTPException(status_code=500, detail="Erro interno na solicitação de grant")
 
@@ -297,21 +359,34 @@ async def relinquishment(
     db: Session = Depends(get_db)
 ):
     """Terminar grant - Alinhado com contrato Solidity"""
+    logger.info(f"=== RELINQUISHMENT REQUEST ===")
+    logger.info(f"SAS Address: {sas_address}")
+    logger.info(f"FCC ID: {request.fccId}")
+    logger.info(f"CBSD Serial: {request.cbsdSerialNumber}")
+    logger.info(f"Grant ID: {request.grantId}")
+    
     try:
         # Verificar se SAS está autorizado
+        logger.info(f"Verificando autorização SAS: {sas_address}")
         if not await verify_sas_authorization(sas_address, db):
+            logger.error(f"SAS não autorizado: {sas_address}")
             raise HTTPException(status_code=403, detail="SAS não autorizado")
+        logger.info(f"SAS autorizado: {sas_address}")
         
         # Verificar se CBSD existe
+        logger.info(f"Verificando se CBSD existe: {request.fccId}/{request.cbsdSerialNumber}")
         cbsd = db.query(CBSD).filter(
             CBSD.fcc_id == request.fccId,
             CBSD.cbsd_serial_number == request.cbsdSerialNumber
         ).first()
         
         if not cbsd:
+            logger.error(f"CBSD não registrado: {request.fccId}/{request.cbsdSerialNumber}")
             raise HTTPException(status_code=404, detail="CBSD não registrado")
+        logger.info(f"CBSD encontrado: {request.cbsdSerialNumber}")
         
         # Encontrar e terminar o grant
+        logger.info(f"Procurando grant: {request.grantId}")
         grant = db.query(Grant).filter(
             Grant.grant_id == request.grantId,
             Grant.fcc_id == request.fccId,
@@ -342,6 +417,10 @@ async def relinquishment(
         db.add(event)
         db.commit()
         
+        logger.info(f"Grant terminado com sucesso: {request.grantId}")
+        logger.info(f"Evento registrado: GRANT_TERMINATED")
+        logger.info(f"=== RELINQUISHMENT SUCCESS ===")
+        
         return RelinquishmentResponse(
             cbsdId=request.cbsdSerialNumber,
             relinquishmentResponse={
@@ -351,10 +430,11 @@ async def relinquishment(
             }
         )
         
-    except HTTPException:
+    except HTTPException as he:
+        logger.error(f"HTTPException no relinquishment: {he.status_code} - {he.detail}")
         raise
     except Exception as e:
-        logger.error(f"Erro no relinquishment: {str(e)}")
+        logger.error(f"Erro interno no relinquishment: {str(e)}")
         db.rollback()
         raise HTTPException(status_code=500, detail="Erro interno no relinquishment")
 
