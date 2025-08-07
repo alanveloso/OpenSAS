@@ -37,8 +37,9 @@ SCENARIO_LABELS = {
     'sas_full_flow_medium': 'Medium',
     'sas_full_flow_high': 'High',
     'sas_full_flow_stress': 'Stress',
+    'sas_full_flow_extreme': 'Extreme',
 }
-SCENARIO_ORDER = ['Low', 'Medium', 'High', 'Stress']
+SCENARIO_ORDER = ['Low', 'Medium', 'High', 'Stress', 'Extreme']
 
 def get_scenario_label(scenario):
     return SCENARIO_LABELS.get(scenario, scenario)
