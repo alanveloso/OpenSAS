@@ -4,7 +4,7 @@ set -e
 
 PLANS_DIR="plans"
 RESULTS_DIR="results"
-RUNS=25
+RUNS=1
 
 # Backup dos resultados anteriores, se existirem
 if [ -d "$RESULTS_DIR" ]; then
