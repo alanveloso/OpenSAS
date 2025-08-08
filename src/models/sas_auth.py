@@ -9,11 +9,11 @@ class SASAuthorization(Base):
     
     id = Column(Integer, primary_key=True, index=True)
     sas_address = Column(String(42), unique=True, index=True, nullable=False)
-    is_authorized = Column(Boolean, default=True)
+    authorized = Column(Boolean, default=True)
     
     # Timestamps
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
     
     def __repr__(self):
-        return f"<SASAuthorization(address='{self.sas_address}', authorized={self.is_authorized})>" 
+        return f"<SASAuthorization(address='{self.sas_address}', authorized={self.authorized})>" 

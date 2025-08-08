@@ -1,21 +1,31 @@
 scenario,request_type,responseCode,count
-sas_full_flow_extreme,Authorize,200,6000
-sas_full_flow_extreme,Authorize,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,2000
-sas_full_flow_extreme,Deregistration,403,3330
-sas_full_flow_extreme,Deregistration,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,2000
-sas_full_flow_extreme,Deregistration,404,1544
-sas_full_flow_extreme,Deregistration,200,1126
-sas_full_flow_extreme,Grant,403,2919
-sas_full_flow_extreme,Grant,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,2000
-sas_full_flow_extreme,Grant,200,1777
-sas_full_flow_extreme,Grant,404,1304
-sas_full_flow_extreme,Registration,403,2804
-sas_full_flow_extreme,Registration,400,2069
-sas_full_flow_extreme,Registration,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,2000
-sas_full_flow_extreme,Registration,200,1127
-sas_full_flow_extreme,Relinquishment,403,3135
-sas_full_flow_extreme,Relinquishment,404,2632
-sas_full_flow_extreme,Relinquishment,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,2000
-sas_full_flow_extreme,Relinquishment,200,233
-sas_full_flow_extreme,Revoke,200,6000
-sas_full_flow_extreme,Revoke,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,2000
+sas_full_flow_extreme,Authorize,200,1000
+sas_full_flow_extreme,Deregistration,200,1000
+sas_full_flow_extreme,Grant,200,1000
+sas_full_flow_extreme,Registration,200,1000
+sas_full_flow_extreme,Relinquishment,200,1000
+sas_full_flow_extreme,Revoke,200,1000
+sas_full_flow_high,Authorize,200,300
+sas_full_flow_high,Deregistration,200,300
+sas_full_flow_high,Grant,200,300
+sas_full_flow_high,Registration,200,300
+sas_full_flow_high,Relinquishment,200,300
+sas_full_flow_high,Revoke,200,300
+sas_full_flow_low,Authorize,200,20
+sas_full_flow_low,Deregistration,200,20
+sas_full_flow_low,Grant,200,20
+sas_full_flow_low,Registration,200,20
+sas_full_flow_low,Relinquishment,200,20
+sas_full_flow_low,Revoke,200,20
+sas_full_flow_medium,Authorize,200,100
+sas_full_flow_medium,Deregistration,200,100
+sas_full_flow_medium,Grant,200,100
+sas_full_flow_medium,Registration,200,100
+sas_full_flow_medium,Relinquishment,200,100
+sas_full_flow_medium,Revoke,200,100
+sas_full_flow_stress,Authorize,200,500
+sas_full_flow_stress,Deregistration,200,500
+sas_full_flow_stress,Grant,200,500
+sas_full_flow_stress,Registration,200,500
+sas_full_flow_stress,Relinquishment,200,500
+sas_full_flow_stress,Revoke,200,500

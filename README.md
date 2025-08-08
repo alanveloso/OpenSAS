@@ -40,7 +40,7 @@ Execute o script de configuração completa:
 
 ```bash
 # Clone o repositório
-git clone <repository-url>
+git clone https://github.com/alanveloso/OpenSAS
 cd OpenSAS
 
 # Execute a configuração automática

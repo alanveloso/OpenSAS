@@ -117,7 +117,7 @@ async def verify_sas_authorization(sas_address: str, db: Session) -> bool:
     """Verifica se o SAS está autorizado"""
     auth = db.query(SASAuthorization).filter(
         SASAuthorization.sas_address == sas_address,
-        SASAuthorization.is_authorized == True
+        SASAuthorization.authorized == True
     ).first()
     return auth is not None
 
@@ -253,6 +253,10 @@ async def registration(
         raise
     except Exception as e:
         logger.error(f"Erro interno no registro: {str(e)}")
+        logger.error(f"Tipo de erro: {type(e).__name__}")
+        logger.error(f"Traceback completo:")
+        import traceback
+        logger.error(traceback.format_exc())
         db.rollback()
         raise HTTPException(status_code=500, detail="Erro interno no registro")
 
@@ -349,6 +353,10 @@ async def grant(
         raise
     except Exception as e:
         logger.error(f"Erro interno na solicitação de grant: {str(e)}")
+        logger.error(f"Tipo de erro: {type(e).__name__}")
+        logger.error(f"Traceback completo:")
+        import traceback
+        logger.error(traceback.format_exc())
         db.rollback()
         raise HTTPException(status_code=500, detail="Erro interno na solicitação de grant")
 
@@ -502,11 +510,11 @@ async def authorize_sas(request: SASAuthorizeRequest, db: Session = Depends(get_
         ).first()
         
         if existing_auth:
-            existing_auth.is_authorized = True
+            existing_auth.authorized = True
         else:
             auth = SASAuthorization(
                 sas_address=request.sas_address,
-                is_authorized=True
+                authorized=True
             )
             db.add(auth)
         
@@ -524,6 +532,10 @@ async def authorize_sas(request: SASAuthorizeRequest, db: Session = Depends(get_
         
     except Exception as e:
         logger.error(f"Erro na autorização SAS: {str(e)}")
+        logger.error(f"Tipo de erro: {type(e).__name__}")
+        logger.error(f"Traceback completo:")
+        import traceback
+        logger.error(traceback.format_exc())
         db.rollback()
         raise HTTPException(status_code=500, detail="Erro interno na autorização")
 
@@ -536,7 +548,7 @@ async def revoke_sas(request: SASRevokeRequest, db: Session = Depends(get_db)):
         ).first()
         
         if auth:
-            auth.is_authorized = False
+            auth.authorized = False
             
             # Registrar evento
             event = Event(
@@ -561,7 +573,7 @@ async def check_sas_authorization(sas_address: str, db: Session = Depends(get_db
     auth = db.query(SASAuthorization).filter(
         SASAuthorization.sas_address == sas_address
     ).first()
-    return {"sas_address": sas_address, "authorized": auth.is_authorized if auth else False}
+    return {"sas_address": sas_address, "authorized": auth.authorized if auth else False}
 
 # --- Endpoints de consulta (equivalente às funções view do contrato) ---
 
@@ -635,7 +647,7 @@ async def get_stats(db: Session = Depends(get_db)):
     cbsd_count = db.query(CBSD).count()
     grant_count = db.query(Grant).count()
     event_count = db.query(Event).count()
-    auth_count = db.query(SASAuthorization).filter(SASAuthorization.is_authorized == True).count()
+    auth_count = db.query(SASAuthorization).filter(SASAuthorization.authorized == True).count()
     
     return {
         "totalCbsds": cbsd_count,

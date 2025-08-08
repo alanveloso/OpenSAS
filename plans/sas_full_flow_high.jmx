@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jmeterTestPlan version="1.2" properties="5.0" jmeter="5.6.3">
   <hashTree>
-    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="SAS Full Flow High Fixed" enabled="true">
-      <stringProp name="TestPlan.comments">Plano High corrigido com SAS único por thread e variável global thread-safe</stringProp>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="SAS Full Flow High" enabled="true">
+      <stringProp name="TestPlan.comments">Plano HIGH: 30 threads x 10 loops = 1800 requisições</stringProp>
       <boolProp name="TestPlan.functional_mode">false</boolProp>
       <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
-      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">true</boolProp>
       <elementProp name="TestPlan.user_defined_variables" elementType="Arguments">
         <collectionProp name="Arguments.arguments">
           <elementProp name="global_counter" elementType="Argument">
@@ -32,28 +32,42 @@
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
-        <!-- Create Unique ID and SAS -->
-        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Create Unique ID and SAS" enabled="true">
+        <!-- Counter for iteration -->
+        <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="Iteration Counter" enabled="true">
+          <stringProp name="CounterConfig.start">1</stringProp>
+          <stringProp name="CounterConfig.end">10</stringProp>
+          <stringProp name="CounterConfig.incr">1</stringProp>
+          <stringProp name="CounterConfig.name">iteration_counter</stringProp>
+          <stringProp name="CounterConfig.format">000</stringProp>
+          <boolProp name="CounterConfig.per_user">false</boolProp>
+        </CounterConfig>
+        <hashTree/>
+        
+        <!-- JSR223 Sampler to generate valid SAS addresses (not counted in results) -->
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Generate Valid SAS Address" enabled="true">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">// Generate valid 42-character Ethereum addresses
+import java.util.concurrent.atomic.AtomicInteger;
+
+// Use thread number to generate unique addresses
+int threadNum = ctx.getThreadNum();
+String baseAddress = "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb9226";
+
+// Create unique addresses by modifying the last few characters
+String uniqueSuffix = String.format("%02d", threadNum);
+String sasAddress = baseAddress.substring(0, 40) + uniqueSuffix;
+
+// Store in variables
+vars.put("sas_address", sasAddress);
+vars.put("unique_id", "ID-" + threadNum + "-" + vars.get("iteration_counter"));
+
+log.info("Generated SAS address for thread " + threadNum + ": " + sasAddress);</stringProp>
           <stringProp name="scriptLanguage">groovy</stringProp>
-          <stringProp name="script">
-            def threadId = ${__threadNum}
-            
-            // Get and increment global counter atomically
-            def counter = vars.get("global_counter") as int
-            vars.put("global_counter", (counter + 1).toString())
-            
-            def uniqueId = threadId + "_" + counter
-            
-            // Create unique SAS address per thread
-            def sasAddress = "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb9226" + threadId
-            
-            vars.put("unique_id", uniqueId)
-            vars.put("sas_address", sasAddress)
-            
-            log.info("Thread ${__threadNum} - Counter ${counter} - Unique ID: ${uniqueId} - SAS: ${sasAddress}")
-          </stringProp>
         </JSR223Sampler>
         <hashTree/>
+        
         <!-- Authorize Sampler -->
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSSamplerProxy" testname="Authorize" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
@@ -86,13 +100,14 @@
           </HeaderManager>
           <hashTree/>
         </hashTree>
+        
         <!-- Registration Sampler -->
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSSamplerProxy" testname="Registration" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{"fccId":"FCC-HIGH-${unique_id}","userId":"USER-HIGH-${unique_id}","cbsdSerialNumber":"CBSD-HIGH-${unique_id}","callSign":"CALL1","cbsdCategory":"A","airInterface":"LTE","measCapability":["CAT_A"],"eirpCapability":30,"latitude":10,"longitude":20,"height":5,"heightType":"AGL","indoorDeployment":false,"antennaGain":15,"antennaBeamwidth":60,"antennaAzimuth":90,"groupingParam":"group1","cbsdAddress":"ADDR1"}</stringProp>
+                <stringProp name="Argument.value">{"fccId":"FCC-MEDIUM-T${__threadNum}-I${iteration_counter}","userId":"USER-MEDIUM-T${__threadNum}-I${iteration_counter}","cbsdSerialNumber":"CBSD-MEDIUM-T${__threadNum}-I${iteration_counter}","callSign":"CALL1","cbsdCategory":"A","airInterface":"LTE","measCapability":["CAT_A"],"eirpCapability":30,"latitude":10,"longitude":20,"height":5,"heightType":"AGL","indoorDeployment":false,"antennaGain":15,"antennaBeamwidth":60,"antennaAzimuth":90,"groupingParam":"group1","cbsdAddress":"ADDR1"}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
@@ -122,13 +137,14 @@
           </HeaderManager>
           <hashTree/>
         </hashTree>
+        
         <!-- Grant Sampler -->
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSSamplerProxy" testname="Grant" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{"fccId":"FCC-HIGH-${unique_id}","cbsdSerialNumber":"CBSD-HIGH-${unique_id}","channelType":"GAA","maxEirp":30,"lowFrequency":3550000000,"highFrequency":3560000000,"requestedMaxEirp":30,"requestedLowFrequency":3550000000,"requestedHighFrequency":3560000000,"grantExpireTime":9999999999}</stringProp>
+                <stringProp name="Argument.value">{"fccId":"FCC-MEDIUM-T${__threadNum}-I${iteration_counter}","cbsdSerialNumber":"CBSD-MEDIUM-T${__threadNum}-I${iteration_counter}","channelType":"GAA","maxEirp":20,"lowFrequency":3550000000,"highFrequency":3700000000,"requestedMaxEirp":20,"requestedLowFrequency":3550000000,"requestedHighFrequency":3700000000,"grantExpireTime":1735689599000}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
@@ -157,23 +173,23 @@
             </collectionProp>
           </HeaderManager>
           <hashTree/>
-          <!-- JSON Extractor para capturar grantId -->
-          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Extract grantId" enabled="true">
+          <!-- JSON Extractor to get grantId -->
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Extract Grant ID" enabled="true">
             <stringProp name="JSONPostProcessor.referenceNames">grantId</stringProp>
             <stringProp name="JSONPostProcessor.jsonPathExprs">$.grantResponse.grantId</stringProp>
-            <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
-            <stringProp name="JSONPostProcessor.defaultValues">NOT_FOUND</stringProp>
-            <boolProp name="JSONPostProcessor.compute_concat">false</boolProp>
+            <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            <stringProp name="JSONPostProcessor.defaultValues"></stringProp>
           </JSONPostProcessor>
           <hashTree/>
         </hashTree>
+        
         <!-- Relinquishment Sampler -->
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSSamplerProxy" testname="Relinquishment" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{"fccId":"FCC-HIGH-${unique_id}","cbsdSerialNumber":"CBSD-HIGH-${unique_id}","grantId":"${grantId}"}</stringProp>
+                <stringProp name="Argument.value">{"fccId":"FCC-MEDIUM-T${__threadNum}-I${iteration_counter}","cbsdSerialNumber":"CBSD-MEDIUM-T${__threadNum}-I${iteration_counter}","grantId":"${grantId}"}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
@@ -203,13 +219,14 @@
           </HeaderManager>
           <hashTree/>
         </hashTree>
+        
         <!-- Deregistration Sampler -->
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSSamplerProxy" testname="Deregistration" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{"fccId":"FCC-HIGH-${unique_id}","cbsdSerialNumber":"CBSD-HIGH-${unique_id}"}</stringProp>
+                <stringProp name="Argument.value">{"fccId":"FCC-MEDIUM-T${__threadNum}-I${iteration_counter}","cbsdSerialNumber":"CBSD-MEDIUM-T${__threadNum}-I${iteration_counter}"}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
@@ -239,6 +256,7 @@
           </HeaderManager>
           <hashTree/>
         </hashTree>
+        
         <!-- Revoke Sampler -->
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSSamplerProxy" testname="Revoke" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
@@ -274,4 +292,4 @@
       </hashTree>
     </hashTree>
   </hashTree>
-</jmeterTestPlan> 
+</jmeterTestPlan>

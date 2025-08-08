@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, DateTime, Text, ForeignKey, Boolean
+from sqlalchemy import Column, Integer, String, DateTime, Text, ForeignKey, Boolean, BigInteger
 from sqlalchemy.sql import func
 from sqlalchemy.orm import relationship
 from .database import Base
@@ -10,26 +10,26 @@ class Grant(Base):
     
     id = Column(Integer, primary_key=True, index=True)
     grant_id = Column(String(100), unique=True, index=True, nullable=False)
-    fcc_id = Column(String(50), ForeignKey("cbsds.fcc_id"), nullable=False)
+    fcc_id = Column(String(50), nullable=False)
     cbsd_serial_number = Column(String(100), nullable=False)
     channel_type = Column(String(10), nullable=False)  # GAA, PAL
     max_eirp = Column(Integer, nullable=False)
-    low_frequency = Column(Integer, nullable=False)
-    high_frequency = Column(Integer, nullable=False)
+    low_frequency = Column(BigInteger, nullable=False)
+    high_frequency = Column(BigInteger, nullable=False)
     requested_max_eirp = Column(Integer, nullable=False)
-    requested_low_frequency = Column(Integer, nullable=False)
-    requested_high_frequency = Column(Integer, nullable=False)
-    grant_expire_time = Column(Integer, nullable=False)
-    transmit_expire_time = Column(Integer, nullable=True)
+    requested_low_frequency = Column(BigInteger, nullable=False)
+    requested_high_frequency = Column(BigInteger, nullable=False)
+    grant_expire_time = Column(BigInteger, nullable=False)
+    transmit_expire_time = Column(BigInteger, nullable=True)
     state = Column(String(20), default="GRANTED")  # GRANTED, AUTHORIZED, TERMINATED
     
     # Campos adicionais alinhados com contrato Solidity
     sas_origin = Column(String(42), nullable=False)  # Ethereum address do SAS que criou o grant
-    grant_timestamp = Column(Integer, nullable=False)  # Unix timestamp
+    grant_timestamp = Column(BigInteger, nullable=False)  # Unix timestamp
     terminated = Column(Boolean, default=False)  # Se o grant foi terminado
     
-    # Relacionamento
-    cbsd = relationship("CBSD", back_populates="grants")
+    # Relacionamento (comentado temporariamente)
+    # cbsd = relationship("CBSD", primaryjoin="Grant.fcc_id == CBSD.fcc_id")
     
     # Timestamps
     created_at = Column(DateTime(timezone=True), server_default=func.now())

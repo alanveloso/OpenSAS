@@ -32,8 +32,8 @@ class CBSD(Base):
     sas_origin = Column(String(42), nullable=False)  # Ethereum address do SAS que registrou
     registration_timestamp = Column(Integer, nullable=False)  # Unix timestamp
     
-    # Relacionamento com grants
-    grants = relationship("Grant", back_populates="cbsd", cascade="all, delete-orphan")
+    # Relacionamento com grants (comentado temporariamente)
+    # grants = relationship("Grant", primaryjoin="CBSD.fcc_id == Grant.fcc_id", cascade="all, delete-orphan")
     
     # Timestamps
     created_at = Column(DateTime(timezone=True), server_default=func.now())
