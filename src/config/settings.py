@@ -27,9 +27,14 @@ class Settings(BaseSettings):
     enable_cache: bool = True
     enable_metrics: bool = True
     
+    # Segurança (opcional)
+    secret_key: Optional[str] = None
+    allowed_hosts: Optional[str] = None
+    
     class Config:
         env_file = ".env"
         case_sensitive = False
+        extra = "ignore"  # Ignorar campos extras
 
 # Instância global das configurações
 settings = Settings() 
