@@ -1,0 +1,701 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1754666162144,1108,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-8,text,true,,0,0,10,10,null,0,0,0
+1754666162147,1107,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-9,text,true,,0,0,10,10,null,0,0,0
+1754666162144,1113,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-7,text,true,,0,0,10,10,null,0,0,0
+1754666162154,1104,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-10,text,true,,0,0,10,10,null,0,0,0
+1754666162141,1118,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-2,text,true,,0,0,10,10,null,0,0,0
+1754666162141,1118,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-4,text,true,,0,0,10,10,null,0,0,0
+1754666162145,1115,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-5,text,true,,0,0,10,10,null,0,0,0
+1754666162143,1118,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-6,text,true,,0,0,10,10,null,0,0,0
+1754666162141,1119,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-3,text,true,,0,0,10,10,null,0,0,0
+1754666162141,1123,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-1,text,true,,0,0,10,10,null,0,0,0
+1754666163384,85,Authorize,200,OK,SAS Full Flow Thread Group 1-3,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,71,0,40
+1754666163384,93,Authorize,200,OK,SAS Full Flow Thread Group 1-1,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,93,0,43
+1754666163384,94,Authorize,200,OK,SAS Full Flow Thread Group 1-9,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,94,0,43
+1754666163384,94,Authorize,200,OK,SAS Full Flow Thread Group 1-4,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,94,0,47
+1754666163385,114,Authorize,200,OK,SAS Full Flow Thread Group 1-8,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,114,0,41
+1754666163384,119,Authorize,200,OK,SAS Full Flow Thread Group 1-7,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,119,0,44
+1754666163384,136,Authorize,200,OK,SAS Full Flow Thread Group 1-2,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,136,0,44
+1754666163384,140,Authorize,200,OK,SAS Full Flow Thread Group 1-10,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,139,0,44
+1754666163385,146,Authorize,200,OK,SAS Full Flow Thread Group 1-5,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,146,0,44
+1754666163470,80,Registration,200,OK,SAS Full Flow Thread Group 1-3,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,80,0,0
+1754666163478,117,Registration,200,OK,SAS Full Flow Thread Group 1-1,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,117,0,0
+1754666163500,95,Registration,200,OK,SAS Full Flow Thread Group 1-8,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,95,0,0
+1754666163479,117,Registration,200,OK,SAS Full Flow Thread Group 1-4,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,117,0,0
+1754666163479,118,Registration,200,OK,SAS Full Flow Thread Group 1-9,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,118,0,0
+1754666163383,216,Authorize,200,OK,SAS Full Flow Thread Group 1-6,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,215,0,48
+1754666163504,104,Registration,200,OK,SAS Full Flow Thread Group 1-7,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,104,0,0
+1754666163524,102,Registration,200,OK,SAS Full Flow Thread Group 1-10,text,true,,258,647,10,10,http://localhost:9000/v1.3/registration,102,0,0
+1754666163521,106,Registration,200,OK,SAS Full Flow Thread Group 1-2,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,106,0,0
+1754666163532,103,Registration,200,OK,SAS Full Flow Thread Group 1-5,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,103,0,0
+1754666163599,86,Registration,200,OK,SAS Full Flow Thread Group 1-6,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,86,0,0
+1754666163596,88,Grant,200,OK,SAS Full Flow Thread Group 1-1,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,88,0,0
+1754666163551,92,Grant,200,OK,SAS Full Flow Thread Group 1-3,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,92,0,0
+1754666163596,88,Grant,200,OK,SAS Full Flow Thread Group 1-8,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,88,0,0
+1754666163597,90,Grant,200,OK,SAS Full Flow Thread Group 1-4,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,90,0,0
+1754666163598,86,Grant,200,OK,SAS Full Flow Thread Group 1-9,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,86,0,0
+1754666163627,86,Grant,200,OK,SAS Full Flow Thread Group 1-2,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,86,0,0
+1754666163609,104,Grant,200,OK,SAS Full Flow Thread Group 1-7,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,104,0,0
+1754666163626,88,Grant,200,OK,SAS Full Flow Thread Group 1-10,text,true,,430,523,10,10,http://localhost:9000/v1.3/grant,88,0,0
+1754666163636,87,Grant,200,OK,SAS Full Flow Thread Group 1-5,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,87,0,0
+1754666163685,48,Grant,200,OK,SAS Full Flow Thread Group 1-6,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,48,0,0
+1754666163701,42,Relinquishment,200,OK,SAS Full Flow Thread Group 1-8,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,42,0,0
+1754666163700,102,Relinquishment,200,OK,SAS Full Flow Thread Group 1-1,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,102,0,0
+1754666163701,101,Relinquishment,200,OK,SAS Full Flow Thread Group 1-4,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,101,0,0
+1754666163724,79,Relinquishment,200,OK,SAS Full Flow Thread Group 1-5,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,78,0,0
+1754666163700,103,Relinquishment,200,OK,SAS Full Flow Thread Group 1-3,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,103,0,0
+1754666163715,87,Relinquishment,200,OK,SAS Full Flow Thread Group 1-10,text,true,,330,389,10,10,http://localhost:9000/v1.3/relinquishment,87,0,0
+1754666163714,89,Relinquishment,200,OK,SAS Full Flow Thread Group 1-2,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,89,0,0
+1754666163714,90,Relinquishment,200,OK,SAS Full Flow Thread Group 1-7,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,89,0,0
+1754666163702,102,Relinquishment,200,OK,SAS Full Flow Thread Group 1-9,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,100,0,0
+1754666163734,88,Relinquishment,200,OK,SAS Full Flow Thread Group 1-6,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,88,0,0
+1754666163744,78,Deregistration,200,OK,SAS Full Flow Thread Group 1-8,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,77,0,0
+1754666163803,38,Deregistration,200,OK,SAS Full Flow Thread Group 1-10,text,true,,262,320,10,10,http://localhost:9000/v1.3/deregistration,38,0,0
+1754666163803,38,Deregistration,200,OK,SAS Full Flow Thread Group 1-3,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,38,0,0
+1754666163803,39,Deregistration,200,OK,SAS Full Flow Thread Group 1-5,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,39,0,0
+1754666163804,71,Deregistration,200,OK,SAS Full Flow Thread Group 1-2,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,71,0,0
+1754666163804,71,Deregistration,200,OK,SAS Full Flow Thread Group 1-7,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,71,0,0
+1754666163802,74,Deregistration,200,OK,SAS Full Flow Thread Group 1-1,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,74,0,0
+1754666163804,72,Deregistration,200,OK,SAS Full Flow Thread Group 1-9,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,72,0,0
+1754666163804,72,Deregistration,200,OK,SAS Full Flow Thread Group 1-4,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,72,0,0
+1754666163823,68,Deregistration,200,OK,SAS Full Flow Thread Group 1-6,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,68,0,0
+1754666163823,68,Revoke,200,OK,SAS Full Flow Thread Group 1-8,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,68,0,0
+1754666163892,2,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-8,text,true,,0,0,10,10,null,0,0,0
+1754666163845,61,Revoke,200,OK,SAS Full Flow Thread Group 1-3,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,61,0,0
+1754666163842,64,Revoke,200,OK,SAS Full Flow Thread Group 1-5,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,64,0,0
+1754666163842,64,Revoke,200,OK,SAS Full Flow Thread Group 1-10,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,64,0,0
+1754666163906,1,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-3,text,true,,0,0,10,10,null,0,0,0
+1754666163907,2,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-10,text,true,,0,0,10,10,null,0,0,0
+1754666163907,4,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-5,text,true,,0,0,10,10,null,0,0,0
+1754666163876,49,Revoke,200,OK,SAS Full Flow Thread Group 1-1,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,49,0,0
+1754666163877,48,Revoke,200,OK,SAS Full Flow Thread Group 1-9,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,48,0,0
+1754666163875,50,Revoke,200,OK,SAS Full Flow Thread Group 1-2,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,50,0,0
+1754666163926,1,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-1,text,true,,0,0,10,10,null,0,0,0
+1754666163926,1,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-9,text,true,,0,0,10,10,null,0,0,0
+1754666163876,49,Revoke,200,OK,SAS Full Flow Thread Group 1-4,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,49,0,0
+1754666163928,1,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-2,text,true,,0,0,10,10,null,0,0,0
+1754666163928,4,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-4,text,true,,0,0,10,10,null,0,0,0
+1754666163875,60,Revoke,200,OK,SAS Full Flow Thread Group 1-7,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,60,0,0
+1754666163935,2,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-7,text,true,,0,0,10,10,null,0,0,0
+1754666163910,47,Authorize,200,OK,SAS Full Flow Thread Group 1-10,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,47,0,0
+1754666163893,65,Revoke,200,OK,SAS Full Flow Thread Group 1-6,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,65,0,0
+1754666163908,49,Authorize,200,OK,SAS Full Flow Thread Group 1-3,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,49,0,0
+1754666163895,63,Authorize,200,OK,SAS Full Flow Thread Group 1-8,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,63,0,0
+1754666163958,3,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-6,text,true,,0,0,10,10,null,0,0,0
+1754666163928,53,Authorize,200,OK,SAS Full Flow Thread Group 1-9,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,53,0,0
+1754666163927,55,Authorize,200,OK,SAS Full Flow Thread Group 1-1,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,55,0,0
+1754666163929,54,Authorize,200,OK,SAS Full Flow Thread Group 1-2,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,54,0,0
+1754666163933,48,Authorize,200,OK,SAS Full Flow Thread Group 1-4,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,48,0,0
+1754666163912,72,Authorize,200,OK,SAS Full Flow Thread Group 1-5,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,72,0,0
+1754666163937,54,Authorize,200,OK,SAS Full Flow Thread Group 1-7,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,54,0,0
+1754666163958,62,Registration,200,OK,SAS Full Flow Thread Group 1-10,text,true,,258,647,10,10,http://localhost:9000/v1.3/registration,62,0,0
+1754666163960,60,Registration,200,OK,SAS Full Flow Thread Group 1-8,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,60,0,0
+1754666163962,59,Authorize,200,OK,SAS Full Flow Thread Group 1-6,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,58,0,0
+1754666163959,63,Registration,200,OK,SAS Full Flow Thread Group 1-3,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,63,0,0
+1754666163983,81,Registration,200,OK,SAS Full Flow Thread Group 1-9,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,80,0,0
+1754666163983,81,Registration,200,OK,SAS Full Flow Thread Group 1-2,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,80,0,0
+1754666163983,81,Registration,200,OK,SAS Full Flow Thread Group 1-4,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,81,0,0
+1754666163984,80,Registration,200,OK,SAS Full Flow Thread Group 1-5,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,80,0,0
+1754666163982,83,Registration,200,OK,SAS Full Flow Thread Group 1-1,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,83,0,0
+1754666163991,92,Registration,200,OK,SAS Full Flow Thread Group 1-7,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,92,0,0
+1754666164022,120,Grant,200,OK,SAS Full Flow Thread Group 1-3,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,120,0,0
+1754666164066,76,Grant,200,OK,SAS Full Flow Thread Group 1-5,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,76,0,0
+1754666164021,121,Grant,200,OK,SAS Full Flow Thread Group 1-10,text,true,,430,523,10,10,http://localhost:9000/v1.3/grant,121,0,0
+1754666164065,78,Grant,200,OK,SAS Full Flow Thread Group 1-1,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,78,0,0
+1754666164067,76,Grant,200,OK,SAS Full Flow Thread Group 1-2,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,76,0,0
+1754666164021,123,Registration,200,OK,SAS Full Flow Thread Group 1-6,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,123,0,0
+1754666164064,78,Grant,200,OK,SAS Full Flow Thread Group 1-9,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,78,0,0
+1754666164021,123,Grant,200,OK,SAS Full Flow Thread Group 1-8,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,123,0,0
+1754666164066,79,Grant,200,OK,SAS Full Flow Thread Group 1-4,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,79,0,0
+1754666164084,68,Grant,200,OK,SAS Full Flow Thread Group 1-7,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,67,0,0
+1754666164145,67,Relinquishment,200,OK,SAS Full Flow Thread Group 1-8,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,67,0,0
+1754666164142,70,Relinquishment,200,OK,SAS Full Flow Thread Group 1-3,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,70,0,0
+1754666164144,69,Relinquishment,200,OK,SAS Full Flow Thread Group 1-1,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,69,0,0
+1754666164145,68,Relinquishment,200,OK,SAS Full Flow Thread Group 1-9,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,68,0,0
+1754666164143,70,Relinquishment,200,OK,SAS Full Flow Thread Group 1-5,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,70,0,0
+1754666164144,69,Relinquishment,200,OK,SAS Full Flow Thread Group 1-10,text,true,,330,389,10,10,http://localhost:9000/v1.3/relinquishment,69,0,0
+1754666164144,68,Grant,200,OK,SAS Full Flow Thread Group 1-6,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,68,0,0
+1754666164144,70,Relinquishment,200,OK,SAS Full Flow Thread Group 1-2,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,69,0,0
+1754666164152,78,Relinquishment,200,OK,SAS Full Flow Thread Group 1-7,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,78,0,0
+1754666164145,85,Relinquishment,200,OK,SAS Full Flow Thread Group 1-4,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,85,0,0
+1754666164212,66,Deregistration,200,OK,SAS Full Flow Thread Group 1-8,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,66,0,0
+1754666164213,65,Deregistration,200,OK,SAS Full Flow Thread Group 1-9,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,65,0,0
+1754666164216,63,Deregistration,200,OK,SAS Full Flow Thread Group 1-2,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,63,0,0
+1754666164213,71,Deregistration,200,OK,SAS Full Flow Thread Group 1-1,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,70,0,0
+1754666164214,72,Deregistration,200,OK,SAS Full Flow Thread Group 1-10,text,true,,262,320,10,10,http://localhost:9000/v1.3/deregistration,72,0,0
+1754666164214,66,Deregistration,200,OK,SAS Full Flow Thread Group 1-5,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,66,0,0
+1754666164231,49,Deregistration,200,OK,SAS Full Flow Thread Group 1-7,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,49,0,0
+1754666164214,64,Deregistration,200,OK,SAS Full Flow Thread Group 1-3,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,64,0,0
+1754666164231,48,Deregistration,200,OK,SAS Full Flow Thread Group 1-4,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,48,0,0
+1754666164215,64,Relinquishment,200,OK,SAS Full Flow Thread Group 1-6,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,64,0,0
+1754666164284,34,Revoke,200,OK,SAS Full Flow Thread Group 1-2,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,34,0,0
+1754666164280,38,Revoke,200,OK,SAS Full Flow Thread Group 1-9,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,38,0,0
+1754666164286,32,Revoke,200,OK,SAS Full Flow Thread Group 1-10,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,32,0,0
+1754666164280,38,Revoke,200,OK,SAS Full Flow Thread Group 1-8,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,38,0,0
+1754666164320,1,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-9,text,true,,0,0,10,10,null,0,0,0
+1754666164321,1,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-8,text,true,,0,0,10,10,null,0,0,0
+1754666164318,1,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-2,text,true,,0,0,10,10,null,0,0,0
+1754666164286,33,Revoke,200,OK,SAS Full Flow Thread Group 1-1,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,33,0,0
+1754666164325,1,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-1,text,true,,0,0,10,10,null,0,0,0
+1754666164325,2,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-10,text,true,,0,0,10,10,null,0,0,0
+1754666164288,45,Revoke,200,OK,SAS Full Flow Thread Group 1-7,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,45,0,0
+1754666164287,46,Revoke,200,OK,SAS Full Flow Thread Group 1-5,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,46,0,0
+1754666164334,1,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-5,text,true,,0,0,10,10,null,0,0,0
+1754666164334,4,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-7,text,true,,0,0,10,10,null,0,0,0
+1754666164291,59,Revoke,200,OK,SAS Full Flow Thread Group 1-4,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,58,0,0
+1754666164294,56,Deregistration,200,OK,SAS Full Flow Thread Group 1-6,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,55,0,0
+1754666164289,61,Revoke,200,OK,SAS Full Flow Thread Group 1-3,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,61,0,0
+1754666164350,2,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-3,text,true,,0,0,10,10,null,0,0,0
+1754666164351,2,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-4,text,true,,0,0,10,10,null,0,0,0
+1754666164322,50,Authorize,200,OK,SAS Full Flow Thread Group 1-8,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,50,0,0
+1754666164323,49,Authorize,200,OK,SAS Full Flow Thread Group 1-2,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,49,0,0
+1754666164322,50,Authorize,200,OK,SAS Full Flow Thread Group 1-9,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,50,0,0
+1754666164327,45,Authorize,200,OK,SAS Full Flow Thread Group 1-10,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,45,0,0
+1754666164327,45,Authorize,200,OK,SAS Full Flow Thread Group 1-1,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,45,0,0
+1754666164338,48,Authorize,200,OK,SAS Full Flow Thread Group 1-7,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,47,0,0
+1754666164335,53,Authorize,200,OK,SAS Full Flow Thread Group 1-5,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,53,0,0
+1754666164350,43,Revoke,200,OK,SAS Full Flow Thread Group 1-6,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,43,0,0
+1754666164394,1,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-6,text,true,,0,0,10,10,null,0,0,0
+1754666164353,50,Authorize,200,OK,SAS Full Flow Thread Group 1-4,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,50,0,0
+1754666164352,51,Authorize,200,OK,SAS Full Flow Thread Group 1-3,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,51,0,0
+1754666164373,82,Registration,200,OK,SAS Full Flow Thread Group 1-2,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,81,0,0
+1754666164374,82,Registration,200,OK,SAS Full Flow Thread Group 1-10,text,true,,258,647,10,10,http://localhost:9000/v1.3/registration,82,0,0
+1754666164375,82,Registration,200,OK,SAS Full Flow Thread Group 1-9,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,79,0,0
+1754666164375,81,Registration,200,OK,SAS Full Flow Thread Group 1-1,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,81,0,0
+1754666164373,87,Registration,200,OK,SAS Full Flow Thread Group 1-8,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,87,0,0
+1754666164388,83,Registration,200,OK,SAS Full Flow Thread Group 1-5,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,83,0,0
+1754666164386,86,Registration,200,OK,SAS Full Flow Thread Group 1-7,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,86,0,0
+1754666164395,87,Authorize,200,OK,SAS Full Flow Thread Group 1-6,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,87,0,0
+1754666164403,104,Registration,200,OK,SAS Full Flow Thread Group 1-3,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,104,0,0
+1754666164403,104,Registration,200,OK,SAS Full Flow Thread Group 1-4,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,104,0,0
+1754666164457,84,Grant,200,OK,SAS Full Flow Thread Group 1-9,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,84,0,0
+1754666164457,84,Grant,200,OK,SAS Full Flow Thread Group 1-1,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,84,0,0
+1754666164456,86,Grant,200,OK,SAS Full Flow Thread Group 1-10,text,true,,430,523,10,10,http://localhost:9000/v1.3/grant,86,0,0
+1754666164460,82,Grant,200,OK,SAS Full Flow Thread Group 1-8,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,82,0,0
+1754666164455,88,Grant,200,OK,SAS Full Flow Thread Group 1-2,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,86,0,0
+1754666164472,86,Grant,200,OK,SAS Full Flow Thread Group 1-7,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,86,0,0
+1754666164472,86,Grant,200,OK,SAS Full Flow Thread Group 1-5,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,86,0,0
+1754666164482,86,Registration,200,OK,SAS Full Flow Thread Group 1-6,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,86,0,0
+1754666164508,73,Grant,200,OK,SAS Full Flow Thread Group 1-4,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,73,0,0
+1754666164507,75,Grant,200,OK,SAS Full Flow Thread Group 1-3,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,75,0,0
+1754666164543,68,Relinquishment,200,OK,SAS Full Flow Thread Group 1-10,text,true,,330,389,10,10,http://localhost:9000/v1.3/relinquishment,68,0,0
+1754666164542,69,Relinquishment,200,OK,SAS Full Flow Thread Group 1-9,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,69,0,0
+1754666164543,68,Relinquishment,200,OK,SAS Full Flow Thread Group 1-8,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,68,0,0
+1754666164543,69,Relinquishment,200,OK,SAS Full Flow Thread Group 1-1,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,69,0,0
+1754666164558,78,Relinquishment,200,OK,SAS Full Flow Thread Group 1-5,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,78,0,0
+1754666164558,78,Relinquishment,200,OK,SAS Full Flow Thread Group 1-7,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,78,0,0
+1754666164543,93,Relinquishment,200,OK,SAS Full Flow Thread Group 1-2,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,93,0,0
+1754666164568,77,Grant,200,OK,SAS Full Flow Thread Group 1-6,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,77,0,0
+1754666164582,70,Relinquishment,200,OK,SAS Full Flow Thread Group 1-4,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,70,0,0
+1754666164582,80,Relinquishment,200,OK,SAS Full Flow Thread Group 1-3,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,80,0,0
+1754666164611,71,Deregistration,200,OK,SAS Full Flow Thread Group 1-9,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,71,0,0
+1754666164612,70,Deregistration,200,OK,SAS Full Flow Thread Group 1-8,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,70,0,0
+1754666164611,71,Deregistration,200,OK,SAS Full Flow Thread Group 1-10,text,true,,262,320,10,10,http://localhost:9000/v1.3/deregistration,71,0,0
+1754666164612,71,Deregistration,200,OK,SAS Full Flow Thread Group 1-1,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,71,0,0
+1754666164636,58,Deregistration,200,OK,SAS Full Flow Thread Group 1-2,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,58,0,0
+1754666164637,58,Deregistration,200,OK,SAS Full Flow Thread Group 1-5,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,58,0,0
+1754666164637,65,Deregistration,200,OK,SAS Full Flow Thread Group 1-7,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,65,0,0
+1754666164653,63,Deregistration,200,OK,SAS Full Flow Thread Group 1-4,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,63,0,0
+1754666164645,73,Relinquishment,200,OK,SAS Full Flow Thread Group 1-6,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,73,0,0
+1754666164683,59,Revoke,200,OK,SAS Full Flow Thread Group 1-1,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,59,0,0
+1754666164682,60,Revoke,200,OK,SAS Full Flow Thread Group 1-8,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,60,0,0
+1754666164662,80,Deregistration,200,OK,SAS Full Flow Thread Group 1-3,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,80,0,0
+1754666164682,60,Revoke,200,OK,SAS Full Flow Thread Group 1-9,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,60,0,0
+1754666164682,61,Revoke,200,OK,SAS Full Flow Thread Group 1-10,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,61,0,0
+1754666164742,1,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-8,text,true,,0,0,10,10,null,0,0,0
+1754666164743,0,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-9,text,true,,0,0,10,10,null,0,0,0
+1754666164743,2,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-10,text,true,,0,0,10,10,null,0,0,0
+1754666164743,3,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-1,text,true,,0,0,10,10,null,0,0,0
+1754666164695,55,Revoke,200,OK,SAS Full Flow Thread Group 1-2,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,55,0,0
+1754666164751,1,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-2,text,true,,0,0,10,10,null,0,0,0
+1754666164702,60,Revoke,200,OK,SAS Full Flow Thread Group 1-7,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,60,0,0
+1754666164696,66,Revoke,200,OK,SAS Full Flow Thread Group 1-5,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,66,0,0
+1754666164762,2,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-7,text,true,,0,0,10,10,null,0,0,0
+1754666164762,3,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-5,text,true,,0,0,10,10,null,0,0,0
+1754666164718,58,Deregistration,200,OK,SAS Full Flow Thread Group 1-6,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,58,0,0
+1754666164717,59,Revoke,200,OK,SAS Full Flow Thread Group 1-4,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,59,0,0
+1754666164778,1,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-4,text,true,,0,0,10,10,null,0,0,0
+1754666164745,56,Authorize,200,OK,SAS Full Flow Thread Group 1-9,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,56,0,0
+1754666164745,56,Revoke,200,OK,SAS Full Flow Thread Group 1-3,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,56,0,0
+1754666164746,55,Authorize,200,OK,SAS Full Flow Thread Group 1-1,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,55,0,0
+1754666164744,57,Authorize,200,OK,SAS Full Flow Thread Group 1-8,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,57,0,0
+1754666164747,55,Authorize,200,OK,SAS Full Flow Thread Group 1-10,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,55,0,0
+1754666164801,3,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-3,text,true,,0,0,10,10,null,0,0,0
+1754666164752,55,Authorize,200,OK,SAS Full Flow Thread Group 1-2,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,55,0,0
+1754666164764,55,Authorize,200,OK,SAS Full Flow Thread Group 1-7,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,55,0,0
+1754666164765,54,Authorize,200,OK,SAS Full Flow Thread Group 1-5,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,54,0,0
+1754666164780,52,Authorize,200,OK,SAS Full Flow Thread Group 1-4,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,52,0,0
+1754666164776,58,Revoke,200,OK,SAS Full Flow Thread Group 1-6,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,58,0,0
+1754666164834,1,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-6,text,true,,0,0,10,10,null,0,0,0
+1754666164805,62,Authorize,200,OK,SAS Full Flow Thread Group 1-3,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,62,0,0
+1754666164801,66,Registration,200,OK,SAS Full Flow Thread Group 1-9,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,66,0,0
+1754666164802,66,Registration,200,OK,SAS Full Flow Thread Group 1-10,text,true,,258,647,10,10,http://localhost:9000/v1.3/registration,66,0,0
+1754666164808,61,Registration,200,OK,SAS Full Flow Thread Group 1-2,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,61,0,0
+1754666164802,82,Registration,200,OK,SAS Full Flow Thread Group 1-8,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,82,0,0
+1754666164804,81,Registration,200,OK,SAS Full Flow Thread Group 1-1,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,80,0,0
+1754666164819,77,Registration,200,OK,SAS Full Flow Thread Group 1-5,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,77,0,0
+1754666164820,85,Registration,200,OK,SAS Full Flow Thread Group 1-7,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,85,0,0
+1754666164836,82,Authorize,200,OK,SAS Full Flow Thread Group 1-6,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,82,0,0
+1754666164833,85,Registration,200,OK,SAS Full Flow Thread Group 1-4,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,85,0,0
+1754666164869,87,Grant,200,OK,SAS Full Flow Thread Group 1-9,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,87,0,0
+1754666164869,87,Grant,200,OK,SAS Full Flow Thread Group 1-2,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,87,0,0
+1754666164868,89,Registration,200,OK,SAS Full Flow Thread Group 1-3,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,89,0,0
+1754666164885,72,Grant,200,OK,SAS Full Flow Thread Group 1-1,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,71,0,0
+1754666164885,73,Grant,200,OK,SAS Full Flow Thread Group 1-8,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,73,0,0
+1754666164868,90,Grant,200,OK,SAS Full Flow Thread Group 1-10,text,true,,430,523,10,10,http://localhost:9000/v1.3/grant,90,0,0
+1754666164897,70,Grant,200,OK,SAS Full Flow Thread Group 1-5,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,70,0,0
+1754666164906,69,Grant,200,OK,SAS Full Flow Thread Group 1-7,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,69,0,0
+1754666164919,70,Registration,200,OK,SAS Full Flow Thread Group 1-6,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,70,0,0
+1754666164919,70,Grant,200,OK,SAS Full Flow Thread Group 1-4,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,70,0,0
+1754666164958,75,Relinquishment,200,OK,SAS Full Flow Thread Group 1-2,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,75,0,0
+1754666164959,74,Relinquishment,200,OK,SAS Full Flow Thread Group 1-8,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,74,0,0
+1754666164958,75,Relinquishment,200,OK,SAS Full Flow Thread Group 1-1,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,75,0,0
+1754666164957,77,Grant,200,OK,SAS Full Flow Thread Group 1-3,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,77,0,0
+1754666164957,77,Relinquishment,200,OK,SAS Full Flow Thread Group 1-9,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,77,0,0
+1754666164959,75,Relinquishment,200,OK,SAS Full Flow Thread Group 1-10,text,true,,330,389,10,10,http://localhost:9000/v1.3/relinquishment,75,0,0
+1754666164968,75,Relinquishment,200,OK,SAS Full Flow Thread Group 1-5,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,75,0,0
+1754666164976,76,Relinquishment,200,OK,SAS Full Flow Thread Group 1-7,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,76,0,0
+1754666164991,76,Relinquishment,200,OK,SAS Full Flow Thread Group 1-4,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,76,0,0
+1754666164990,77,Grant,200,OK,SAS Full Flow Thread Group 1-6,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,77,0,0
+1754666165035,69,Relinquishment,200,OK,SAS Full Flow Thread Group 1-3,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,69,0,0
+1754666165034,70,Deregistration,200,OK,SAS Full Flow Thread Group 1-2,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,70,0,0
+1754666165034,71,Deregistration,200,OK,SAS Full Flow Thread Group 1-8,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,71,0,0
+1754666165035,70,Deregistration,200,OK,SAS Full Flow Thread Group 1-9,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,70,0,0
+1754666165035,70,Deregistration,200,OK,SAS Full Flow Thread Group 1-1,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,70,0,0
+1754666165036,69,Deregistration,200,OK,SAS Full Flow Thread Group 1-10,text,true,,262,320,10,10,http://localhost:9000/v1.3/deregistration,69,0,0
+1754666165044,68,Deregistration,200,OK,SAS Full Flow Thread Group 1-5,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,67,0,0
+1754666165053,65,Deregistration,200,OK,SAS Full Flow Thread Group 1-7,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,65,0,0
+1754666165067,64,Deregistration,200,OK,SAS Full Flow Thread Group 1-4,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,64,0,0
+1754666165067,64,Relinquishment,200,OK,SAS Full Flow Thread Group 1-6,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,64,0,0
+1754666165105,55,Revoke,200,OK,SAS Full Flow Thread Group 1-8,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,55,0,0
+1754666165106,54,Revoke,200,OK,SAS Full Flow Thread Group 1-1,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,54,0,0
+1754666165105,56,Deregistration,200,OK,SAS Full Flow Thread Group 1-3,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,56,0,0
+1754666165105,56,Revoke,200,OK,SAS Full Flow Thread Group 1-9,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,56,0,0
+1754666165161,1,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-9,text,true,,0,0,10,10,null,0,0,0
+1754666165163,0,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-1,text,true,,0,0,10,10,null,0,0,0
+1754666165106,59,Revoke,200,OK,SAS Full Flow Thread Group 1-2,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,59,0,0
+1754666165160,5,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-8,text,true,,0,0,10,10,null,0,0,0
+1754666165107,59,Revoke,200,OK,SAS Full Flow Thread Group 1-10,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,59,0,0
+1754666165166,1,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-10,text,true,,0,0,10,10,null,0,0,0
+1754666165112,54,Revoke,200,OK,SAS Full Flow Thread Group 1-5,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,54,0,0
+1754666165165,5,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-2,text,true,,0,0,10,10,null,0,0,0
+1754666165170,1,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-5,text,true,,0,0,10,10,null,0,0,0
+1754666165131,51,Revoke,200,OK,SAS Full Flow Thread Group 1-4,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,51,0,0
+1754666165119,63,Revoke,200,OK,SAS Full Flow Thread Group 1-7,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,63,0,0
+1754666165132,50,Deregistration,200,OK,SAS Full Flow Thread Group 1-6,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,50,0,0
+1754666165183,0,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-4,text,true,,0,0,10,10,null,0,0,0
+1754666165183,1,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-7,text,true,,0,0,10,10,null,0,0,0
+1754666165161,32,Revoke,200,OK,SAS Full Flow Thread Group 1-3,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,32,0,0
+1754666165162,31,Authorize,200,OK,SAS Full Flow Thread Group 1-9,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,31,0,0
+1754666165194,1,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-3,text,true,,0,0,10,10,null,0,0,0
+1754666165165,50,Authorize,200,OK,SAS Full Flow Thread Group 1-8,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,50,0,0
+1754666165167,48,Authorize,200,OK,SAS Full Flow Thread Group 1-10,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,48,0,0
+1754666165170,45,Authorize,200,OK,SAS Full Flow Thread Group 1-2,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,45,0,0
+1754666165164,52,Authorize,200,OK,SAS Full Flow Thread Group 1-1,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,52,0,0
+1754666165171,45,Authorize,200,OK,SAS Full Flow Thread Group 1-5,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,45,0,0
+1754666165183,41,Revoke,200,OK,SAS Full Flow Thread Group 1-6,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,41,0,0
+1754666165225,0,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-6,text,true,,0,0,10,10,null,0,0,0
+1754666165184,54,Authorize,200,OK,SAS Full Flow Thread Group 1-7,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,54,0,0
+1754666165184,54,Authorize,200,OK,SAS Full Flow Thread Group 1-4,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,54,0,0
+1754666165195,56,Registration,200,OK,SAS Full Flow Thread Group 1-9,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,56,0,0
+1754666165196,55,Authorize,200,OK,SAS Full Flow Thread Group 1-3,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,55,0,0
+1754666165217,75,Registration,200,OK,SAS Full Flow Thread Group 1-8,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,75,0,0
+1754666165216,77,Registration,200,OK,SAS Full Flow Thread Group 1-1,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,76,0,0
+1754666165220,73,Registration,200,OK,SAS Full Flow Thread Group 1-5,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,73,0,0
+1754666165218,75,Registration,200,OK,SAS Full Flow Thread Group 1-2,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,74,0,0
+1754666165218,75,Registration,200,OK,SAS Full Flow Thread Group 1-10,text,true,,258,647,10,10,http://localhost:9000/v1.3/registration,74,0,0
+1754666165226,73,Authorize,200,OK,SAS Full Flow Thread Group 1-6,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,73,0,0
+1754666165239,80,Registration,200,OK,SAS Full Flow Thread Group 1-4,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,80,0,0
+1754666165239,80,Registration,200,OK,SAS Full Flow Thread Group 1-7,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,80,0,0
+1754666165252,84,Registration,200,OK,SAS Full Flow Thread Group 1-3,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,83,0,0
+1754666165252,84,Grant,200,OK,SAS Full Flow Thread Group 1-9,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,84,0,0
+1754666165294,81,Grant,200,OK,SAS Full Flow Thread Group 1-1,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,81,0,0
+1754666165293,82,Grant,200,OK,SAS Full Flow Thread Group 1-2,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,82,0,0
+1754666165293,82,Grant,200,OK,SAS Full Flow Thread Group 1-8,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,82,0,0
+1754666165293,83,Grant,200,OK,SAS Full Flow Thread Group 1-5,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,83,0,0
+1754666165293,83,Grant,200,OK,SAS Full Flow Thread Group 1-10,text,true,,430,523,10,10,http://localhost:9000/v1.3/grant,83,0,0
+1754666165299,88,Registration,200,OK,SAS Full Flow Thread Group 1-6,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,88,0,0
+1754666165322,81,Grant,200,OK,SAS Full Flow Thread Group 1-4,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,81,0,0
+1754666165319,85,Grant,200,OK,SAS Full Flow Thread Group 1-7,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,85,0,0
+1754666165336,74,Grant,200,OK,SAS Full Flow Thread Group 1-3,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,74,0,0
+1754666165337,82,Relinquishment,200,OK,SAS Full Flow Thread Group 1-9,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,82,0,0
+1754666165375,85,Relinquishment,200,OK,SAS Full Flow Thread Group 1-2,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,85,0,0
+1754666165376,85,Relinquishment,200,OK,SAS Full Flow Thread Group 1-10,text,true,,330,389,10,10,http://localhost:9000/v1.3/relinquishment,85,0,0
+1754666165377,85,Relinquishment,200,OK,SAS Full Flow Thread Group 1-1,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,84,0,0
+1754666165376,86,Relinquishment,200,OK,SAS Full Flow Thread Group 1-5,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,86,0,0
+1754666165375,88,Relinquishment,200,OK,SAS Full Flow Thread Group 1-8,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,88,0,0
+1754666165387,83,Grant,200,OK,SAS Full Flow Thread Group 1-6,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,83,0,0
+1754666165411,88,Relinquishment,200,OK,SAS Full Flow Thread Group 1-3,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,88,0,0
+1754666165403,96,Relinquishment,200,OK,SAS Full Flow Thread Group 1-4,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,96,0,0
+1754666165404,95,Relinquishment,200,OK,SAS Full Flow Thread Group 1-7,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,95,0,0
+1754666165462,77,Deregistration,200,OK,SAS Full Flow Thread Group 1-1,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,77,0,0
+1754666165461,78,Deregistration,200,OK,SAS Full Flow Thread Group 1-10,text,true,,262,320,10,10,http://localhost:9000/v1.3/deregistration,78,0,0
+1754666165464,75,Deregistration,200,OK,SAS Full Flow Thread Group 1-8,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,75,0,0
+1754666165463,77,Deregistration,200,OK,SAS Full Flow Thread Group 1-5,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,77,0,0
+1754666165471,69,Relinquishment,200,OK,SAS Full Flow Thread Group 1-6,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,69,0,0
+1754666165460,80,Deregistration,200,OK,SAS Full Flow Thread Group 1-2,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,80,0,0
+1754666165420,121,Deregistration,200,OK,SAS Full Flow Thread Group 1-9,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,121,0,0
+1754666165499,98,Deregistration,200,OK,SAS Full Flow Thread Group 1-4,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,98,0,0
+1754666165539,58,Revoke,200,OK,SAS Full Flow Thread Group 1-8,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,58,0,0
+1754666165499,99,Deregistration,200,OK,SAS Full Flow Thread Group 1-3,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,99,0,0
+1754666165542,56,Revoke,200,OK,SAS Full Flow Thread Group 1-2,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,56,0,0
+1754666165539,59,Revoke,200,OK,SAS Full Flow Thread Group 1-10,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,59,0,0
+1754666165540,59,Revoke,200,OK,SAS Full Flow Thread Group 1-5,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,59,0,0
+1754666165540,59,Revoke,200,OK,SAS Full Flow Thread Group 1-1,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,59,0,0
+1754666165499,101,Deregistration,200,OK,SAS Full Flow Thread Group 1-7,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,101,0,0
+1754666165541,60,Revoke,200,OK,SAS Full Flow Thread Group 1-9,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,60,0,0
+1754666165540,61,Deregistration,200,OK,SAS Full Flow Thread Group 1-6,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,61,0,0
+1754666165598,4,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-2,text,true,,0,0,10,10,null,0,0,0
+1754666165597,6,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-8,text,true,,0,0,10,10,null,0,0,0
+1754666165601,2,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-9,text,true,,0,0,10,10,null,0,0,0
+1754666165598,7,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-10,text,true,,0,0,10,10,null,0,0,0
+1754666165599,7,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-5,text,true,,0,0,10,10,null,0,0,0
+1754666165599,7,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-1,text,true,,0,0,10,10,null,0,0,0
+1754666165598,15,Revoke,200,OK,SAS Full Flow Thread Group 1-3,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,15,0,0
+1754666165600,14,Revoke,200,OK,SAS Full Flow Thread Group 1-7,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,14,0,0
+1754666165614,1,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-3,text,true,,0,0,10,10,null,0,0,0
+1754666165614,3,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-7,text,true,,0,0,10,10,null,0,0,0
+1754666165601,19,Revoke,200,OK,SAS Full Flow Thread Group 1-6,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,19,0,0
+1754666165620,2,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-6,text,true,,0,0,10,10,null,0,0,0
+1754666165597,28,Revoke,200,OK,SAS Full Flow Thread Group 1-4,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,28,0,0
+1754666165626,1,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-4,text,true,,0,0,10,10,null,0,0,0
+1754666165603,32,Authorize,200,OK,SAS Full Flow Thread Group 1-9,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,32,0,0
+1754666165602,33,Authorize,200,OK,SAS Full Flow Thread Group 1-2,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,33,0,0
+1754666165603,37,Authorize,200,OK,SAS Full Flow Thread Group 1-8,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,37,0,0
+1754666165615,45,Authorize,200,OK,SAS Full Flow Thread Group 1-3,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,45,0,0
+1754666165606,54,Authorize,200,OK,SAS Full Flow Thread Group 1-1,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,54,0,0
+1754666165605,55,Authorize,200,OK,SAS Full Flow Thread Group 1-10,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,55,0,0
+1754666165606,55,Authorize,200,OK,SAS Full Flow Thread Group 1-5,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,55,0,0
+1754666165617,44,Authorize,200,OK,SAS Full Flow Thread Group 1-7,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,44,0,0
+1754666165622,43,Authorize,200,OK,SAS Full Flow Thread Group 1-6,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,43,0,0
+1754666165635,51,Registration,200,OK,SAS Full Flow Thread Group 1-2,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,51,0,0
+1754666165627,59,Authorize,200,OK,SAS Full Flow Thread Group 1-4,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,59,0,0
+1754666165635,52,Registration,200,OK,SAS Full Flow Thread Group 1-9,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,52,0,0
+1754666165640,54,Registration,200,OK,SAS Full Flow Thread Group 1-8,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,54,0,0
+1754666165660,87,Registration,200,OK,SAS Full Flow Thread Group 1-10,text,true,,258,647,10,10,http://localhost:9000/v1.3/registration,87,0,0
+1754666165661,86,Registration,200,OK,SAS Full Flow Thread Group 1-7,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,86,0,0
+1754666165660,87,Registration,200,OK,SAS Full Flow Thread Group 1-1,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,87,0,0
+1754666165665,83,Registration,200,OK,SAS Full Flow Thread Group 1-6,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,83,0,0
+1754666165660,88,Registration,200,OK,SAS Full Flow Thread Group 1-3,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,88,0,0
+1754666165661,87,Registration,200,OK,SAS Full Flow Thread Group 1-5,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,87,0,0
+1754666165687,91,Registration,200,OK,SAS Full Flow Thread Group 1-4,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,91,0,0
+1754666165687,91,Grant,200,OK,SAS Full Flow Thread Group 1-9,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,91,0,0
+1754666165687,91,Grant,200,OK,SAS Full Flow Thread Group 1-2,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,91,0,0
+1754666165694,92,Grant,200,OK,SAS Full Flow Thread Group 1-8,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,92,0,0
+1754666165748,78,Grant,200,OK,SAS Full Flow Thread Group 1-3,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,78,0,0
+1754666165748,78,Grant,200,OK,SAS Full Flow Thread Group 1-6,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,78,0,0
+1754666165749,78,Grant,200,OK,SAS Full Flow Thread Group 1-5,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,78,0,0
+1754666165748,82,Grant,200,OK,SAS Full Flow Thread Group 1-1,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,78,0,0
+1754666165747,80,Grant,200,OK,SAS Full Flow Thread Group 1-7,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,79,0,0
+1754666165747,80,Grant,200,OK,SAS Full Flow Thread Group 1-10,text,true,,430,523,10,10,http://localhost:9000/v1.3/grant,80,0,0
+1754666165779,71,Relinquishment,200,OK,SAS Full Flow Thread Group 1-2,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,71,0,0
+1754666165778,72,Grant,200,OK,SAS Full Flow Thread Group 1-4,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,72,0,0
+1754666165779,72,Relinquishment,200,OK,SAS Full Flow Thread Group 1-9,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,72,0,0
+1754666165786,77,Relinquishment,200,OK,SAS Full Flow Thread Group 1-8,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,77,0,0
+1754666165827,98,Relinquishment,200,OK,SAS Full Flow Thread Group 1-3,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,98,0,0
+1754666165830,95,Relinquishment,200,OK,SAS Full Flow Thread Group 1-6,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,95,0,0
+1754666165851,75,Deregistration,200,OK,SAS Full Flow Thread Group 1-2,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,75,0,0
+1754666165851,75,Relinquishment,200,OK,SAS Full Flow Thread Group 1-4,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,75,0,0
+1754666165831,95,Relinquishment,200,OK,SAS Full Flow Thread Group 1-1,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,95,0,0
+1754666165851,76,Deregistration,200,OK,SAS Full Flow Thread Group 1-9,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,76,0,0
+1754666165831,96,Relinquishment,200,OK,SAS Full Flow Thread Group 1-7,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,96,0,0
+1754666165833,94,Relinquishment,200,OK,SAS Full Flow Thread Group 1-10,text,true,,330,389,10,10,http://localhost:9000/v1.3/relinquishment,94,0,0
+1754666165830,98,Relinquishment,200,OK,SAS Full Flow Thread Group 1-5,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,98,0,0
+1754666165926,20,Deregistration,200,OK,SAS Full Flow Thread Group 1-3,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,20,0,0
+1754666165863,83,Deregistration,200,OK,SAS Full Flow Thread Group 1-8,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,83,0,0
+1754666165926,21,Deregistration,200,OK,SAS Full Flow Thread Group 1-6,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,20,0,0
+1754666165926,30,Deregistration,200,OK,SAS Full Flow Thread Group 1-4,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,30,0,0
+1754666165926,30,Revoke,200,OK,SAS Full Flow Thread Group 1-2,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,30,0,0
+1754666165956,1,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-2,text,true,,0,0,10,10,null,0,0,0
+1754666165927,41,Revoke,200,OK,SAS Full Flow Thread Group 1-9,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,41,0,0
+1754666165927,41,Deregistration,200,OK,SAS Full Flow Thread Group 1-1,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,41,0,0
+1754666165968,3,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-9,text,true,,0,0,10,10,null,0,0,0
+1754666165927,58,Deregistration,200,OK,SAS Full Flow Thread Group 1-7,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,58,0,0
+1754666165929,67,Deregistration,200,OK,SAS Full Flow Thread Group 1-5,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,67,0,0
+1754666165927,69,Deregistration,200,OK,SAS Full Flow Thread Group 1-10,text,true,,262,320,10,10,http://localhost:9000/v1.3/deregistration,69,0,0
+1754666165959,64,Authorize,200,OK,SAS Full Flow Thread Group 1-2,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,64,0,0
+1754666165947,76,Revoke,200,OK,SAS Full Flow Thread Group 1-6,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,76,0,0
+1754666165947,77,Revoke,200,OK,SAS Full Flow Thread Group 1-8,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,77,0,0
+1754666166023,1,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-6,text,true,,0,0,10,10,null,0,0,0
+1754666165947,78,Revoke,200,OK,SAS Full Flow Thread Group 1-3,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,78,0,0
+1754666165956,69,Revoke,200,OK,SAS Full Flow Thread Group 1-4,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,69,0,0
+1754666166024,2,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-8,text,true,,0,0,10,10,null,0,0,0
+1754666166025,1,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-3,text,true,,0,0,10,10,null,0,0,0
+1754666166026,1,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-4,text,true,,0,0,10,10,null,0,0,0
+1754666165971,68,Authorize,200,OK,SAS Full Flow Thread Group 1-9,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,68,0,0
+1754666165971,68,Revoke,200,OK,SAS Full Flow Thread Group 1-1,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,68,0,0
+1754666166042,1,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-1,text,true,,0,0,10,10,null,0,0,0
+1754666165985,63,Revoke,200,OK,SAS Full Flow Thread Group 1-7,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,63,0,0
+1754666166050,2,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-7,text,true,,0,0,10,10,null,0,0,0
+1754666165996,58,Revoke,200,OK,SAS Full Flow Thread Group 1-5,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,58,0,0
+1754666166055,1,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-5,text,true,,0,0,10,10,null,0,0,0
+1754666165997,64,Revoke,200,OK,SAS Full Flow Thread Group 1-10,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,64,0,0
+1754666166062,3,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-10,text,true,,0,0,10,10,null,0,0,0
+1754666166026,67,Authorize,200,OK,SAS Full Flow Thread Group 1-3,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,67,0,0
+1754666166024,69,Authorize,200,OK,SAS Full Flow Thread Group 1-6,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,69,0,0
+1754666166024,70,Registration,200,OK,SAS Full Flow Thread Group 1-2,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,70,0,0
+1754666166027,67,Authorize,200,OK,SAS Full Flow Thread Group 1-4,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,67,0,0
+1754666166026,69,Authorize,200,OK,SAS Full Flow Thread Group 1-8,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,68,0,0
+1754666166052,66,Authorize,200,OK,SAS Full Flow Thread Group 1-7,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,66,0,0
+1754666166039,80,Registration,200,OK,SAS Full Flow Thread Group 1-9,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,80,0,0
+1754666166043,76,Authorize,200,OK,SAS Full Flow Thread Group 1-1,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,76,0,0
+1754666166056,72,Authorize,200,OK,SAS Full Flow Thread Group 1-5,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,72,0,0
+1754666166066,62,Authorize,200,OK,SAS Full Flow Thread Group 1-10,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,62,0,0
+1754666166095,76,Registration,200,OK,SAS Full Flow Thread Group 1-8,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,76,0,0
+1754666166093,78,Registration,200,OK,SAS Full Flow Thread Group 1-6,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,78,0,0
+1754666166093,78,Registration,200,OK,SAS Full Flow Thread Group 1-3,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,78,0,0
+1754666166094,78,Grant,200,OK,SAS Full Flow Thread Group 1-2,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,78,0,0
+1754666166095,77,Registration,200,OK,SAS Full Flow Thread Group 1-4,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,77,0,0
+1754666166128,77,Registration,200,OK,SAS Full Flow Thread Group 1-5,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,77,0,0
+1754666166119,86,Registration,200,OK,SAS Full Flow Thread Group 1-7,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,86,0,0
+1754666166119,86,Grant,200,OK,SAS Full Flow Thread Group 1-9,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,86,0,0
+1754666166120,86,Registration,200,OK,SAS Full Flow Thread Group 1-1,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,86,0,0
+1754666166129,111,Registration,200,OK,SAS Full Flow Thread Group 1-10,text,true,,258,647,10,10,http://localhost:9000/v1.3/registration,111,0,0
+1754666166172,68,Grant,200,OK,SAS Full Flow Thread Group 1-8,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,68,0,0
+1754666166172,69,Grant,200,OK,SAS Full Flow Thread Group 1-6,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,69,0,0
+1754666166172,70,Grant,200,OK,SAS Full Flow Thread Group 1-4,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,70,0,0
+1754666166172,69,Grant,200,OK,SAS Full Flow Thread Group 1-3,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,69,0,0
+1754666166172,80,Relinquishment,200,OK,SAS Full Flow Thread Group 1-2,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,80,0,0
+1754666166206,76,Relinquishment,200,OK,SAS Full Flow Thread Group 1-9,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,76,0,0
+1754666166205,79,Grant,200,OK,SAS Full Flow Thread Group 1-5,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,79,0,0
+1754666166206,76,Grant,200,OK,SAS Full Flow Thread Group 1-1,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,76,0,0
+1754666166206,76,Grant,200,OK,SAS Full Flow Thread Group 1-7,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,76,0,0
+1754666166242,81,Relinquishment,200,OK,SAS Full Flow Thread Group 1-6,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,81,0,0
+1754666166242,81,Relinquishment,200,OK,SAS Full Flow Thread Group 1-3,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,81,0,0
+1754666166241,82,Relinquishment,200,OK,SAS Full Flow Thread Group 1-8,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,82,0,0
+1754666166242,82,Relinquishment,200,OK,SAS Full Flow Thread Group 1-4,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,82,0,0
+1754666166241,82,Grant,200,OK,SAS Full Flow Thread Group 1-10,text,true,,430,523,10,10,http://localhost:9000/v1.3/grant,82,0,0
+1754666166254,84,Deregistration,200,OK,SAS Full Flow Thread Group 1-2,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,84,0,0
+1754666166284,85,Deregistration,200,OK,SAS Full Flow Thread Group 1-9,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,85,0,0
+1754666166285,84,Relinquishment,200,OK,SAS Full Flow Thread Group 1-1,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,84,0,0
+1754666166284,86,Relinquishment,200,OK,SAS Full Flow Thread Group 1-5,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,86,0,0
+1754666166286,83,Relinquishment,200,OK,SAS Full Flow Thread Group 1-7,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,83,0,0
+1754666166323,73,Deregistration,200,OK,SAS Full Flow Thread Group 1-8,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,73,0,0
+1754666166326,71,Deregistration,200,OK,SAS Full Flow Thread Group 1-3,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,71,0,0
+1754666166325,72,Deregistration,200,OK,SAS Full Flow Thread Group 1-6,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,72,0,0
+1754666166324,73,Relinquishment,200,OK,SAS Full Flow Thread Group 1-10,text,true,,330,389,10,10,http://localhost:9000/v1.3/relinquishment,73,0,0
+1754666166325,73,Deregistration,200,OK,SAS Full Flow Thread Group 1-4,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,73,0,0
+1754666166338,66,Revoke,200,OK,SAS Full Flow Thread Group 1-2,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,66,0,0
+1754666166405,1,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-2,text,true,,0,0,10,10,null,0,0,0
+1754666166370,53,Deregistration,200,OK,SAS Full Flow Thread Group 1-1,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,53,0,0
+1754666166370,53,Revoke,200,OK,SAS Full Flow Thread Group 1-9,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,53,0,0
+1754666166370,54,Deregistration,200,OK,SAS Full Flow Thread Group 1-5,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,54,0,0
+1754666166370,54,Deregistration,200,OK,SAS Full Flow Thread Group 1-7,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,54,0,0
+1754666166424,2,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-9,text,true,,0,0,10,10,null,0,0,0
+1754666166397,48,Deregistration,200,OK,SAS Full Flow Thread Group 1-10,text,true,,262,320,10,10,http://localhost:9000/v1.3/deregistration,48,0,0
+1754666166397,49,Revoke,200,OK,SAS Full Flow Thread Group 1-3,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,49,0,0
+1754666166397,50,Revoke,200,OK,SAS Full Flow Thread Group 1-8,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,50,0,0
+1754666166397,50,Revoke,200,OK,SAS Full Flow Thread Group 1-6,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,48,0,0
+1754666166447,1,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-6,text,true,,0,0,10,10,null,0,0,0
+1754666166447,1,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-8,text,true,,0,0,10,10,null,0,0,0
+1754666166446,3,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-3,text,true,,0,0,10,10,null,0,0,0
+1754666166398,56,Revoke,200,OK,SAS Full Flow Thread Group 1-4,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,56,0,0
+1754666166455,0,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-4,text,true,,0,0,10,10,null,0,0,0
+1754666166406,54,Authorize,200,OK,SAS Full Flow Thread Group 1-2,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,54,0,0
+1754666166423,41,Revoke,200,OK,SAS Full Flow Thread Group 1-1,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,41,0,0
+1754666166465,1,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-1,text,true,,0,0,10,10,null,0,0,0
+1754666166426,51,Authorize,200,OK,SAS Full Flow Thread Group 1-9,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,51,0,0
+1754666166424,53,Revoke,200,OK,SAS Full Flow Thread Group 1-5,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,53,0,0
+1754666166424,54,Revoke,200,OK,SAS Full Flow Thread Group 1-7,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,54,0,0
+1754666166478,1,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-7,text,true,,0,0,10,10,null,0,0,0
+1754666166478,2,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-5,text,true,,0,0,10,10,null,0,0,0
+1754666166448,45,Authorize,200,OK,SAS Full Flow Thread Group 1-6,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,45,0,0
+1754666166448,45,Authorize,200,OK,SAS Full Flow Thread Group 1-8,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,45,0,0
+1754666166445,49,Revoke,200,OK,SAS Full Flow Thread Group 1-10,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,49,0,0
+1754666166450,44,Authorize,200,OK,SAS Full Flow Thread Group 1-3,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,44,0,0
+1754666166494,1,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-10,text,true,,0,0,10,10,null,0,0,0
+1754666166461,60,Registration,200,OK,SAS Full Flow Thread Group 1-2,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,60,0,0
+1754666166456,66,Authorize,200,OK,SAS Full Flow Thread Group 1-4,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,66,0,0
+1754666166493,99,Registration,200,OK,SAS Full Flow Thread Group 1-8,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,99,0,0
+1754666166493,99,Registration,200,OK,SAS Full Flow Thread Group 1-6,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,99,0,0
+1754666166479,113,Authorize,200,OK,SAS Full Flow Thread Group 1-7,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,113,0,0
+1754666166480,112,Authorize,200,OK,SAS Full Flow Thread Group 1-5,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,112,0,0
+1754666166467,125,Authorize,200,OK,SAS Full Flow Thread Group 1-1,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,125,0,0
+1754666166478,115,Registration,200,OK,SAS Full Flow Thread Group 1-9,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,115,0,0
+1754666166494,117,Registration,200,OK,SAS Full Flow Thread Group 1-3,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,117,0,0
+1754666166495,130,Authorize,200,OK,SAS Full Flow Thread Group 1-10,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,130,0,0
+1754666166522,135,Registration,200,OK,SAS Full Flow Thread Group 1-4,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,135,0,0
+1754666166522,135,Grant,200,OK,SAS Full Flow Thread Group 1-2,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,135,0,0
+1754666166594,88,Registration,200,OK,SAS Full Flow Thread Group 1-1,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,88,0,0
+1754666166594,87,Grant,200,OK,SAS Full Flow Thread Group 1-9,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,87,0,0
+1754666166592,90,Grant,200,OK,SAS Full Flow Thread Group 1-8,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,90,0,0
+1754666166611,107,Grant,200,OK,SAS Full Flow Thread Group 1-3,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,107,0,0
+1754666166593,125,Registration,200,OK,SAS Full Flow Thread Group 1-5,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,125,0,0
+1754666166592,126,Registration,200,OK,SAS Full Flow Thread Group 1-7,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,126,0,0
+1754666166592,126,Grant,200,OK,SAS Full Flow Thread Group 1-6,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,126,0,0
+1754666166626,103,Registration,200,OK,SAS Full Flow Thread Group 1-10,text,true,,258,647,10,10,http://localhost:9000/v1.3/registration,103,0,0
+1754666166658,83,Relinquishment,200,OK,SAS Full Flow Thread Group 1-2,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,83,0,0
+1754666166657,84,Grant,200,OK,SAS Full Flow Thread Group 1-4,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,84,0,0
+1754666166719,60,Relinquishment,200,OK,SAS Full Flow Thread Group 1-3,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,59,0,0
+1754666166684,95,Relinquishment,200,OK,SAS Full Flow Thread Group 1-8,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,94,0,0
+1754666166682,97,Grant,200,OK,SAS Full Flow Thread Group 1-1,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,96,0,0
+1754666166683,96,Relinquishment,200,OK,SAS Full Flow Thread Group 1-9,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,96,0,0
+1754666166719,60,Grant,200,OK,SAS Full Flow Thread Group 1-5,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,60,0,0
+1754666166719,61,Relinquishment,200,OK,SAS Full Flow Thread Group 1-6,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,61,0,0
+1754666166719,66,Grant,200,OK,SAS Full Flow Thread Group 1-7,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,66,0,0
+1754666166729,63,Grant,200,OK,SAS Full Flow Thread Group 1-10,text,true,,430,523,10,10,http://localhost:9000/v1.3/grant,63,0,0
+1754666166741,63,Deregistration,200,OK,SAS Full Flow Thread Group 1-2,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,63,0,0
+1754666166741,63,Relinquishment,200,OK,SAS Full Flow Thread Group 1-4,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,63,0,0
+1754666166779,65,Deregistration,200,OK,SAS Full Flow Thread Group 1-8,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,65,0,0
+1754666166786,58,Relinquishment,200,OK,SAS Full Flow Thread Group 1-7,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,58,0,0
+1754666166779,66,Relinquishment,200,OK,SAS Full Flow Thread Group 1-1,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,66,0,0
+1754666166779,66,Deregistration,200,OK,SAS Full Flow Thread Group 1-9,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,66,0,0
+1754666166780,65,Deregistration,200,OK,SAS Full Flow Thread Group 1-6,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,65,0,0
+1754666166779,69,Relinquishment,200,OK,SAS Full Flow Thread Group 1-5,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,69,0,0
+1754666166779,69,Deregistration,200,OK,SAS Full Flow Thread Group 1-3,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,69,0,0
+1754666166804,63,Revoke,200,OK,SAS Full Flow Thread Group 1-2,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,63,0,0
+1754666166804,65,Deregistration,200,OK,SAS Full Flow Thread Group 1-4,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,65,0,0
+1754666166870,4,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-2,text,true,,0,0,10,10,null,0,0,0
+1754666166793,90,Relinquishment,200,OK,SAS Full Flow Thread Group 1-10,text,true,,330,389,10,10,http://localhost:9000/v1.3/relinquishment,90,0,0
+1754666166845,100,Deregistration,200,OK,SAS Full Flow Thread Group 1-7,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,100,0,0
+1754666166845,100,Revoke,200,OK,SAS Full Flow Thread Group 1-8,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,100,0,0
+1754666166845,102,Revoke,200,OK,SAS Full Flow Thread Group 1-9,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,102,0,0
+1754666166947,1,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-9,text,true,,0,0,10,10,null,0,0,0
+1754666166845,104,Deregistration,200,OK,SAS Full Flow Thread Group 1-1,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,104,0,0
+1754666166845,104,Revoke,200,OK,SAS Full Flow Thread Group 1-6,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,104,0,0
+1754666166945,7,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-8,text,true,,0,0,10,10,null,0,0,0
+1754666166950,2,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-6,text,true,,0,0,10,10,null,0,0,0
+1754666166849,118,Revoke,200,OK,SAS Full Flow Thread Group 1-3,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,118,0,0
+1754666166967,1,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-3,text,true,,0,0,10,10,null,0,0,0
+1754666166848,120,Deregistration,200,OK,SAS Full Flow Thread Group 1-5,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,120,0,0
+1754666166869,118,Revoke,200,OK,SAS Full Flow Thread Group 1-4,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,118,0,0
+1754666166874,114,Authorize,200,OK,SAS Full Flow Thread Group 1-2,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,114,0,0
+1754666166987,4,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-4,text,true,,0,0,10,10,null,0,0,0
+1754666166883,116,Deregistration,200,OK,SAS Full Flow Thread Group 1-10,text,true,,262,320,10,10,http://localhost:9000/v1.3/deregistration,116,0,0
+1754666166949,87,Revoke,200,OK,SAS Full Flow Thread Group 1-1,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,87,0,0
+1754666166952,84,Authorize,200,OK,SAS Full Flow Thread Group 1-8,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,84,0,0
+1754666167037,0,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-1,text,true,,0,0,10,10,null,0,0,0
+1754666166945,93,Revoke,200,OK,SAS Full Flow Thread Group 1-7,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,93,0,0
+1754666166948,91,Authorize,200,OK,SAS Full Flow Thread Group 1-9,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,91,0,0
+1754666167038,1,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-7,text,true,,0,0,10,10,null,0,0,0
+1754666166952,89,Authorize,200,OK,SAS Full Flow Thread Group 1-6,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,89,0,0
+1754666166969,90,Revoke,200,OK,SAS Full Flow Thread Group 1-5,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,90,0,0
+1754666167059,1,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-5,text,true,,0,0,10,10,null,0,0,0
+1754666166968,92,Authorize,200,OK,SAS Full Flow Thread Group 1-3,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,92,0,0
+1754666166991,103,Authorize,200,OK,SAS Full Flow Thread Group 1-4,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,103,0,0
+1754666166988,106,Registration,200,OK,SAS Full Flow Thread Group 1-2,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,106,0,0
+1754666166999,105,Revoke,200,OK,SAS Full Flow Thread Group 1-10,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,105,0,0
+1754666167104,1,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-10,text,true,,0,0,10,10,null,0,0,0
+1754666167038,148,Authorize,200,OK,SAS Full Flow Thread Group 1-1,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,148,0,0
+1754666167037,149,Registration,200,OK,SAS Full Flow Thread Group 1-8,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,149,0,0
+1754666167039,147,Registration,200,OK,SAS Full Flow Thread Group 1-9,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,147,0,0
+1754666167041,145,Registration,200,OK,SAS Full Flow Thread Group 1-6,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,145,0,0
+1754666167040,147,Authorize,200,OK,SAS Full Flow Thread Group 1-7,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,147,0,0
+1754666167060,150,Registration,200,OK,SAS Full Flow Thread Group 1-3,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,150,0,0
+1754666167060,150,Authorize,200,OK,SAS Full Flow Thread Group 1-5,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,150,0,0
+1754666167095,144,Grant,200,OK,SAS Full Flow Thread Group 1-2,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,144,0,0
+1754666167094,145,Registration,200,OK,SAS Full Flow Thread Group 1-4,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,145,0,0
+1754666167105,143,Authorize,200,OK,SAS Full Flow Thread Group 1-10,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,143,0,0
+1754666167186,104,Registration,200,OK,SAS Full Flow Thread Group 1-1,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,104,0,0
+1754666167187,103,Grant,200,OK,SAS Full Flow Thread Group 1-6,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,103,0,0
+1754666167186,104,Grant,200,OK,SAS Full Flow Thread Group 1-9,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,104,0,0
+1754666167188,102,Grant,200,OK,SAS Full Flow Thread Group 1-8,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,102,0,0
+1754666167187,128,Registration,200,OK,SAS Full Flow Thread Group 1-7,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,128,0,0
+1754666167211,104,Registration,200,OK,SAS Full Flow Thread Group 1-5,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,104,0,0
+1754666167210,105,Grant,200,OK,SAS Full Flow Thread Group 1-3,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,105,0,0
+1754666167240,101,Grant,200,OK,SAS Full Flow Thread Group 1-4,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,101,0,0
+1754666167240,103,Relinquishment,200,OK,SAS Full Flow Thread Group 1-2,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,103,0,0
+1754666167248,112,Registration,200,OK,SAS Full Flow Thread Group 1-10,text,true,,258,647,10,10,http://localhost:9000/v1.3/registration,112,0,0
+1754666167291,125,Relinquishment,200,OK,SAS Full Flow Thread Group 1-8,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,125,0,0
+1754666167315,101,Relinquishment,200,OK,SAS Full Flow Thread Group 1-3,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,101,0,0
+1754666167290,126,Relinquishment,200,OK,SAS Full Flow Thread Group 1-6,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,126,0,0
+1754666167290,126,Relinquishment,200,OK,SAS Full Flow Thread Group 1-9,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,126,0,0
+1754666167315,101,Grant,200,OK,SAS Full Flow Thread Group 1-7,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,101,0,0
+1754666167290,126,Grant,200,OK,SAS Full Flow Thread Group 1-1,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,126,0,0
+1754666167315,101,Grant,200,OK,SAS Full Flow Thread Group 1-5,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,101,0,0
+1754666167342,88,Relinquishment,200,OK,SAS Full Flow Thread Group 1-4,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,88,0,0
+1754666167343,87,Deregistration,200,OK,SAS Full Flow Thread Group 1-2,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,87,0,0
+1754666167360,78,Grant,200,OK,SAS Full Flow Thread Group 1-10,text,true,,430,523,10,10,http://localhost:9000/v1.3/grant,78,0,0
+1754666167416,71,Deregistration,200,OK,SAS Full Flow Thread Group 1-8,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,71,0,0
+1754666167418,70,Relinquishment,200,OK,SAS Full Flow Thread Group 1-1,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,70,0,0
+1754666167417,71,Relinquishment,200,OK,SAS Full Flow Thread Group 1-7,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,71,0,0
+1754666167416,72,Deregistration,200,OK,SAS Full Flow Thread Group 1-3,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,72,0,0
+1754666167430,57,Revoke,200,OK,SAS Full Flow Thread Group 1-2,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,57,0,0
+1754666167418,70,Deregistration,200,OK,SAS Full Flow Thread Group 1-9,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,70,0,0
+1754666167430,59,Deregistration,200,OK,SAS Full Flow Thread Group 1-4,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,59,0,0
+1754666167418,71,Relinquishment,200,OK,SAS Full Flow Thread Group 1-5,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,71,0,0
+1754666167418,72,Deregistration,200,OK,SAS Full Flow Thread Group 1-6,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,72,0,0
+1754666167488,3,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-2,text,true,,0,0,10,10,null,0,0,0
+1754666167439,67,Relinquishment,200,OK,SAS Full Flow Thread Group 1-10,text,true,,330,389,10,10,http://localhost:9000/v1.3/relinquishment,67,0,0
+1754666167489,35,Deregistration,200,OK,SAS Full Flow Thread Group 1-5,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,35,0,0
+1754666167488,36,Revoke,200,OK,SAS Full Flow Thread Group 1-9,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,36,0,0
+1754666167524,1,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-9,text,true,,0,0,10,10,null,0,0,0
+1754666167488,38,Revoke,200,OK,SAS Full Flow Thread Group 1-8,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,38,0,0
+1754666167489,37,Revoke,200,OK,SAS Full Flow Thread Group 1-4,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,37,0,0
+1754666167527,0,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-4,text,true,,0,0,10,10,null,0,0,0
+1754666167526,2,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-8,text,true,,0,0,10,10,null,0,0,0
+1754666167489,50,Deregistration,200,OK,SAS Full Flow Thread Group 1-1,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,50,0,0
+1754666167490,50,Revoke,200,OK,SAS Full Flow Thread Group 1-6,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,50,0,0
+1754666167541,2,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-6,text,true,,0,0,10,10,null,0,0,0
+1754666167488,65,Revoke,200,OK,SAS Full Flow Thread Group 1-3,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,65,0,0
+1754666167491,62,Deregistration,200,OK,SAS Full Flow Thread Group 1-7,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,62,0,0
+1754666167491,62,Authorize,200,OK,SAS Full Flow Thread Group 1-2,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,62,0,0
+1754666167553,1,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-3,text,true,,0,0,10,10,null,0,0,0
+1754666167507,55,Deregistration,200,OK,SAS Full Flow Thread Group 1-10,text,true,,262,320,10,10,http://localhost:9000/v1.3/deregistration,55,0,0
+1754666167553,42,Registration,200,OK,SAS Full Flow Thread Group 1-2,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,42,0,0
+1754666167524,71,Revoke,200,OK,SAS Full Flow Thread Group 1-5,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,71,0,0
+1754666167527,68,Authorize,200,OK,SAS Full Flow Thread Group 1-4,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,68,0,0
+1754666167543,52,Authorize,200,OK,SAS Full Flow Thread Group 1-6,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,52,0,0
+1754666167553,43,Revoke,200,OK,SAS Full Flow Thread Group 1-7,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,43,0,0
+1754666167525,71,Authorize,200,OK,SAS Full Flow Thread Group 1-9,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,71,0,0
+1754666167528,68,Authorize,200,OK,SAS Full Flow Thread Group 1-8,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,68,0,0
+1754666167596,1,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-7,text,true,,0,0,10,10,null,0,0,0
+1754666167597,1,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-5,text,true,,0,0,10,10,null,0,0,0
+1754666167540,58,Revoke,200,OK,SAS Full Flow Thread Group 1-1,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,58,0,0
+1754666167599,2,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-1,text,true,,0,0,10,10,null,0,0,0
+1754666167554,49,Authorize,200,OK,SAS Full Flow Thread Group 1-3,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,49,0,0
+1754666167562,50,Revoke,200,OK,SAS Full Flow Thread Group 1-10,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,50,0,0
+1754666167612,2,Generate Valid SAS Address,200,OK,SAS Full Flow Thread Group 1-10,text,true,,0,0,10,10,null,0,0,0
+1754666167595,23,Grant,200,OK,SAS Full Flow Thread Group 1-2,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,23,0,0
+1754666167597,69,Registration,200,OK,SAS Full Flow Thread Group 1-8,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,69,0,0
+1754666167596,70,Registration,200,OK,SAS Full Flow Thread Group 1-9,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,70,0,0
+1754666167595,71,Registration,200,OK,SAS Full Flow Thread Group 1-6,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,71,0,0
+1754666167597,69,Authorize,200,OK,SAS Full Flow Thread Group 1-7,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,69,0,0
+1754666167598,68,Authorize,200,OK,SAS Full Flow Thread Group 1-5,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,68,0,0
+1754666167601,66,Authorize,200,OK,SAS Full Flow Thread Group 1-1,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,66,0,0
+1754666167595,72,Registration,200,OK,SAS Full Flow Thread Group 1-4,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,72,0,0
+1754666167603,71,Registration,200,OK,SAS Full Flow Thread Group 1-3,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,71,0,0
+1754666167614,68,Authorize,200,OK,SAS Full Flow Thread Group 1-10,text,true,,211,242,10,10,http://localhost:9000/sas/authorize,68,0,0
+1754666167666,69,Registration,200,OK,SAS Full Flow Thread Group 1-7,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,69,0,0
+1754666167666,69,Grant,200,OK,SAS Full Flow Thread Group 1-8,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,69,0,0
+1754666167619,117,Relinquishment,200,OK,SAS Full Flow Thread Group 1-2,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,117,0,0
+1754666167666,71,Grant,200,OK,SAS Full Flow Thread Group 1-9,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,71,0,0
+1754666167667,70,Registration,200,OK,SAS Full Flow Thread Group 1-1,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,70,0,0
+1754666167666,71,Grant,200,OK,SAS Full Flow Thread Group 1-6,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,71,0,0
+1754666167667,70,Grant,200,OK,SAS Full Flow Thread Group 1-4,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,70,0,0
+1754666167666,71,Registration,200,OK,SAS Full Flow Thread Group 1-5,text,true,,256,644,10,10,http://localhost:9000/v1.3/registration,71,0,0
+1754666167674,71,Grant,200,OK,SAS Full Flow Thread Group 1-3,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,71,0,0
+1754666167682,74,Registration,200,OK,SAS Full Flow Thread Group 1-10,text,true,,258,647,10,10,http://localhost:9000/v1.3/registration,74,0,0
+1754666167735,37,Relinquishment,200,OK,SAS Full Flow Thread Group 1-8,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,37,0,0
+1754666167735,37,Grant,200,OK,SAS Full Flow Thread Group 1-7,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,37,0,0
+1754666167736,72,Deregistration,200,OK,SAS Full Flow Thread Group 1-2,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,72,0,0
+1754666167737,71,Grant,200,OK,SAS Full Flow Thread Group 1-1,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,71,0,0
+1754666167737,72,Relinquishment,200,OK,SAS Full Flow Thread Group 1-6,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,72,0,0
+1754666167737,72,Relinquishment,200,OK,SAS Full Flow Thread Group 1-4,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,72,0,0
+1754666167737,73,Relinquishment,200,OK,SAS Full Flow Thread Group 1-9,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,73,0,0
+1754666167738,72,Grant,200,OK,SAS Full Flow Thread Group 1-5,text,true,,426,521,10,10,http://localhost:9000/v1.3/grant,72,0,0
+1754666167746,71,Relinquishment,200,OK,SAS Full Flow Thread Group 1-3,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,71,0,0
+1754666167756,72,Grant,200,OK,SAS Full Flow Thread Group 1-10,text,true,,430,523,10,10,http://localhost:9000/v1.3/grant,72,0,0
+1754666167772,68,Relinquishment,200,OK,SAS Full Flow Thread Group 1-7,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,68,0,0
+1754666167772,69,Deregistration,200,OK,SAS Full Flow Thread Group 1-8,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,69,0,0
+1754666167809,63,Deregistration,200,OK,SAS Full Flow Thread Group 1-4,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,63,0,0
+1754666167809,63,Relinquishment,200,OK,SAS Full Flow Thread Group 1-1,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,63,0,0
+1754666167810,62,Relinquishment,200,OK,SAS Full Flow Thread Group 1-5,text,true,,326,385,10,10,http://localhost:9000/v1.3/relinquishment,62,0,0
+1754666167809,63,Deregistration,200,OK,SAS Full Flow Thread Group 1-6,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,63,0,0
+1754666167809,64,Revoke,200,OK,SAS Full Flow Thread Group 1-2,text,true,,209,239,10,10,http://localhost:9000/sas/revoke,64,0,0
+1754666167810,63,Deregistration,200,OK,SAS Full Flow Thread Group 1-9,text,true,,260,318,10,10,http://localhost:9000/v1.3/deregistration,63,0,0
+1754666167817,63,Deregistration,200,OK,SAS Full Flow Thread Group 1-3,text,true,,260,318,9,9,http://localhost:9000/v1.3/deregistration,63,0,0
+1754666167828,63,Relinquishment,200,OK,SAS Full Flow Thread Group 1-10,text,true,,330,389,9,9,http://localhost:9000/v1.3/relinquishment,63,0,0
+1754666167840,69,Deregistration,200,OK,SAS Full Flow Thread Group 1-7,text,true,,260,318,9,9,http://localhost:9000/v1.3/deregistration,69,0,0
+1754666167841,69,Revoke,200,OK,SAS Full Flow Thread Group 1-8,text,true,,209,239,9,9,http://localhost:9000/sas/revoke,69,0,0
+1754666167873,63,Revoke,200,OK,SAS Full Flow Thread Group 1-9,text,true,,209,239,8,8,http://localhost:9000/sas/revoke,63,0,0
+1754666167872,65,Revoke,200,OK,SAS Full Flow Thread Group 1-4,text,true,,209,239,8,8,http://localhost:9000/sas/revoke,65,0,0
+1754666167872,65,Deregistration,200,OK,SAS Full Flow Thread Group 1-5,text,true,,260,318,7,7,http://localhost:9000/v1.3/deregistration,65,0,0
+1754666167872,66,Deregistration,200,OK,SAS Full Flow Thread Group 1-1,text,true,,260,318,7,7,http://localhost:9000/v1.3/deregistration,66,0,0
+1754666167873,65,Revoke,200,OK,SAS Full Flow Thread Group 1-6,text,true,,209,239,7,7,http://localhost:9000/sas/revoke,65,0,0
+1754666167880,66,Revoke,200,OK,SAS Full Flow Thread Group 1-3,text,true,,209,239,5,5,http://localhost:9000/sas/revoke,66,0,0
+1754666167891,64,Deregistration,200,OK,SAS Full Flow Thread Group 1-10,text,true,,262,320,4,4,http://localhost:9000/v1.3/deregistration,64,0,0
+1754666167909,51,Revoke,200,OK,SAS Full Flow Thread Group 1-7,text,true,,209,239,4,4,http://localhost:9000/sas/revoke,51,0,0
+1754666167938,31,Revoke,200,OK,SAS Full Flow Thread Group 1-5,text,true,,209,239,3,3,http://localhost:9000/sas/revoke,31,0,0
+1754666167938,31,Revoke,200,OK,SAS Full Flow Thread Group 1-1,text,true,,209,239,3,3,http://localhost:9000/sas/revoke,31,0,0
+1754666167955,23,Revoke,200,OK,SAS Full Flow Thread Group 1-10,text,true,,209,239,1,1,http://localhost:9000/sas/revoke,23,0,0
