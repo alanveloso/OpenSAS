@@ -29,42 +29,163 @@ Sistema de Acesso ao Espectro (SAS) compatível com WINNF TS-0096/3003 (SAS-SAS)
 
 - Python 3.8+
 - pip
-- SQLite (incluído no Python)
+- PostgreSQL 12+ (recomendado) ou SQLite (desenvolvimento)
+- Redis (opcional, para cache)
 
 ## 🛠️ Instalação
 
-1. Clone o repositório:
+### Opção 1: Configuração Rápida (Recomendada)
+
+Execute o script de configuração completa:
+
 ```bash
+# Clone o repositório
 git clone <repository-url>
 cd OpenSAS
+
+# Execute a configuração automática
+bash scripts/setup_environment.sh
 ```
 
-2. Instale as dependências:
+Este script irá:
+1. ✅ Instalar PostgreSQL
+2. ✅ Instalar Redis
+3. ✅ Criar arquivo .env
+4. ✅ Instalar dependências Python
+5. ✅ Testar conexões
+6. ✅ Inicializar banco de dados
+
+### Opção 2: Configuração Manual
+
+#### 1. Configurar PostgreSQL
+
 ```bash
+# Instalar PostgreSQL
+bash scripts/setup_postgres_local.sh
+
+# Ou instalar manualmente:
+# Ubuntu/Debian
+sudo apt-get install postgresql postgresql-contrib
+
+# CentOS/RHEL
+sudo yum install postgresql postgresql-server
+sudo postgresql-setup initdb
+
+# Fedora
+sudo dnf install postgresql postgresql-server
+sudo postgresql-setup --initdb
+```
+
+#### 2. Configurar Redis (Opcional)
+
+```bash
+# Instalar Redis
+bash scripts/setup_redis_local.sh
+
+# Ou instalar manualmente:
+# Ubuntu/Debian
+sudo apt-get install redis-server
+
+# CentOS/RHEL
+sudo yum install redis
+
+# Fedora
+sudo dnf install redis
+```
+
+#### 3. Configurar Ambiente Python
+
+```bash
+# Criar virtual environment
+python3 -m venv venv
+source venv/bin/activate
+
+# Instalar dependências
 pip install -r requirements.txt
+
+# Criar arquivo .env
+cp env.example .env
 ```
 
-3. Execute as migrações do banco de dados:
+#### 4. Testar e Inicializar
+
 ```bash
-python manage.py migrate
+# Testar conexão
+python scripts/test_postgres_connection.py
+
+# Inicializar banco de dados
+python manage.py init
 ```
 
 ## 🚀 Execução
 
 ### Desenvolvimento
 ```bash
+# Ativar virtual environment
+source venv/bin/activate
+
+# Executar API
 python run.py
 ```
 
 ### Produção
 ```bash
+# Com PostgreSQL
 gunicorn src.api.main:app -w 4 -k uvicorn.workers.UvicornWorker --bind 0.0.0.0:9000
+
+# Com SQLite (desenvolvimento)
+python run.py
 ```
 
 A API estará disponível em:
 - **API**: http://localhost:9000
 - **Documentação**: http://localhost:9000/docs
 - **Health Check**: http://localhost:9000/health
+
+## 🧪 Testando a Configuração
+
+### Teste Rápido
+```bash
+bash scripts/quick_test.sh
+```
+
+### Teste Detalhado
+```bash
+python scripts/test_postgres_connection.py
+```
+
+## 🔧 Configurações de Banco de Dados
+
+### PostgreSQL (Recomendado)
+
+**Informações de Conexão:**
+- Host: `localhost`
+- Porta: `5432`
+- Banco: `opensas`
+- Usuário: `opensas_user`
+- Senha: `opensas_password`
+- URL: `postgresql://opensas_user:opensas_password@localhost:5432/opensas`
+
+**Comandos Úteis:**
+```bash
+# Status do serviço
+sudo systemctl status postgresql
+
+# Conectar ao banco
+psql -h localhost -U opensas_user -d opensas
+
+# Reiniciar serviço
+sudo systemctl restart postgresql
+```
+
+### SQLite (Desenvolvimento)
+
+Para desenvolvimento rápido, o sistema também suporta SQLite:
+
+```bash
+# Configurar para SQLite
+export DATABASE_URL="sqlite:///./sas_service.db"
+```
 
 ## 🧪 Benchmarks JMeter
 
@@ -102,10 +223,17 @@ OpenSAS/
 │       ├── sas_auth.py         # Modelo SAS Authorization
 │       └── event.py            # Modelo Event
 ├── scripts/
-│   └── run_all_benchmarks.sh   # Script para rodar todos os benchmarks
+│   ├── setup_environment.sh    # Script de configuração completa
+│   ├── setup_postgres_local.sh # Script para PostgreSQL
+│   ├── setup_redis_local.sh    # Script para Redis
+│   ├── test_postgres_connection.py # Teste de conexão
+│   └── quick_test.sh          # Teste rápido
 ├── requirements.txt
 ├── run.py                      # Script de execução da API
 ├── manage.py                   # Script de administração do banco
+├── env.example                 # Exemplo de variáveis de ambiente
+├── SETUP_LOCAL.md             # Documentação detalhada
+└── POSTGRES_SETUP.md          # Guia PostgreSQL
 ```
 
 ## 🔧 Configuração
