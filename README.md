@@ -2,29 +2,6 @@
 
 Sistema de Acesso ao Espectro (SAS) compatível com WINNF TS-0096/3003 (SAS-SAS).
 
-## 🚀 Funcionalidades
-
-### Endpoints Implementados
-
-#### Endpoints Públicos (WINNF TS-0096)
-- **POST /v1.3/registration** - Registro de CBSD
-- **POST /v1.3/grant** - Solicitação de grant de espectro
-- **GET /v1.3/cbsd/{cbsd_id}** - Obter registro CBSD
-- **POST /v1.3/cbsd/{cbsd_id}** - Atualizar registro CBSD
-- **GET /v1.3/zone/{zone_id}** - Obter registro de zona
-- **POST /v1.3/zone/{zone_id}** - Atualizar registro de zona
-- **GET /v1.3/dump** - Full activity dump
-
-#### Endpoints Administrativos
-- **POST /sas/authorize** - Autorizar SAS
-- **POST /sas/revoke** - Revogar SAS
-- **GET /sas/{sas_address}/authorized** - Verificar autorização SAS
-
-#### Endpoints de Monitoramento
-- **GET /health** - Health check
-- **GET /stats** - Estatísticas do sistema
-- **GET /events/recent** - Eventos recentes
-
 ## 📋 Pré-requisitos
 
 - Python 3.8+

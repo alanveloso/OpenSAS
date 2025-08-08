@@ -67,13 +67,13 @@ fi
 # ============================================================================
 echo "🔍 Testando conexão com PostgreSQL..."
 
-# Teste básico de conexão
-if python scripts/test_postgres_connection.py > /dev/null 2>&1; then
+# Teste básico de conexão usando psql
+if PGPASSWORD=opensas_password psql -h localhost -U opensas_user -d opensas -c "SELECT 1;" > /dev/null 2>&1; then
     echo "✅ Conexão com PostgreSQL OK"
 else
     echo "❌ Erro na conexão com PostgreSQL"
-    echo "   Execute: python scripts/test_postgres_connection.py"
-    exit 1
+    echo "   Verifique: psql -h localhost -U opensas_user -d opensas"
+    echo "   Ou execute: sudo systemctl status postgresql"
 fi
 
 # ============================================================================
@@ -97,7 +97,9 @@ echo "Deseja executar teste detalhado? (y/n)"
 read -r response
 if [[ "$response" =~ ^[Yy]$ ]]; then
     echo "Executando teste detalhado..."
-    python scripts/test_postgres_connection.py
+    PGPASSWORD=opensas_password psql -h localhost -U opensas_user -d opensas -c "\dt"
+    PGPASSWORD=opensas_password psql -h localhost -U opensas_user -d opensas -c "SELECT COUNT(*) FROM cbsds;"
+    PGPASSWORD=opensas_password psql -h localhost -U opensas_user -d opensas -c "SELECT COUNT(*) FROM grants;"
 fi
 
 echo ""

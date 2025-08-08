@@ -123,11 +123,11 @@ fi
 
 # Iniciar e habilitar o serviço Redis
 echo "🔧 Configurando serviço Redis..."
-sudo systemctl start redis
-sudo systemctl enable redis
+sudo systemctl start redis-server
+sudo systemctl enable redis-server
 
 # Verificar se o serviço está rodando
-if sudo systemctl is-active --quiet redis; then
+if sudo systemctl is-active --quiet redis-server; then
     echo "✅ Redis está rodando!"
 else
     echo "❌ Erro ao iniciar Redis"
@@ -179,7 +179,12 @@ echo "🔍 Passo 4: Testando conexões..."
 
 # Testar PostgreSQL
 echo "🔍 Testando conexão com PostgreSQL..."
-python scripts/test_postgres_connection.py
+if PGPASSWORD=opensas_password psql -h localhost -U opensas_user -d opensas -c "SELECT 1;" > /dev/null 2>&1; then
+    echo "✅ Conexão com PostgreSQL OK"
+else
+    echo "❌ Erro na conexão com PostgreSQL"
+    echo "   Verifique: psql -h localhost -U opensas_user -d opensas"
+fi
 
 # ============================================================================
 # 5. INICIALIZAR BANCO DE DADOS
