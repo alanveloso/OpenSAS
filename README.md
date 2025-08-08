@@ -44,7 +44,7 @@ git clone https://github.com/alanveloso/OpenSAS
 cd OpenSAS
 
 # Execute a configuração automática
-bash scripts/setup_environment.sh
+bash scripts/setup.sh
 ```
 
 Este script irá:
@@ -55,63 +55,183 @@ Este script irá:
 5. ✅ Testar conexões
 6. ✅ Inicializar banco de dados
 
-### Opção 2: Configuração Manual
+### Opção 2: Instalação Manual Detalhada
 
-#### 1. Configurar PostgreSQL
+#### Passo 1: Clone o Repositório
+```bash
+git clone https://github.com/alanveloso/OpenSAS
+cd OpenSAS
+```
 
+#### Passo 2: Instalar PostgreSQL
+
+**Ubuntu/Debian:**
+```bash
+# Atualizar repositórios
+sudo apt-get update
+
+# Instalar PostgreSQL
+sudo apt-get install -y postgresql postgresql-contrib postgresql-client
+
+# Iniciar e habilitar o serviço
+sudo systemctl start postgresql
+sudo systemctl enable postgresql
+
+# Verificar se está rodando
+sudo systemctl status postgresql
+```
+
+**CentOS/RHEL:**
 ```bash
 # Instalar PostgreSQL
-bash scripts/setup_postgres_local.sh
+sudo yum install -y postgresql postgresql-server postgresql-contrib
 
-# Ou instalar manualmente:
-# Ubuntu/Debian
-sudo apt-get install postgresql postgresql-contrib
-
-# CentOS/RHEL
-sudo yum install postgresql postgresql-server
+# Inicializar banco de dados
 sudo postgresql-setup initdb
 
-# Fedora
-sudo dnf install postgresql postgresql-server
-sudo postgresql-setup --initdb
+# Iniciar e habilitar o serviço
+sudo systemctl start postgresql
+sudo systemctl enable postgresql
 ```
 
-#### 2. Configurar Redis (Opcional)
+**Fedora:**
+```bash
+# Instalar PostgreSQL
+sudo dnf install -y postgresql postgresql-server postgresql-contrib
+
+# Inicializar banco de dados
+sudo postgresql-setup --initdb
+
+# Iniciar e habilitar o serviço
+sudo systemctl start postgresql
+sudo systemctl enable postgresql
+```
+
+#### Passo 3: Configurar PostgreSQL
 
 ```bash
-# Instalar Redis
-bash scripts/setup_redis_local.sh
+# Conectar como usuário postgres
+sudo -u postgres psql
 
-# Ou instalar manualmente:
-# Ubuntu/Debian
-sudo apt-get install redis-server
+# Criar usuário e banco de dados
+CREATE USER opensas_user WITH PASSWORD 'opensas_password';
+CREATE DATABASE opensas OWNER opensas_user;
+GRANT ALL PRIVILEGES ON DATABASE opensas TO opensas_user;
 
-# CentOS/RHEL
-sudo yum install redis
+# Conectar ao banco opensas
+\c opensas
 
-# Fedora
-sudo dnf install redis
+# Criar extensões necessárias
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+# Criar schema
+CREATE SCHEMA IF NOT EXISTS opensas;
+GRANT ALL PRIVILEGES ON SCHEMA opensas TO opensas_user;
+
+# Configurar search_path
+ALTER DATABASE opensas SET search_path TO opensas, public;
+
+# Sair do psql
+\q
 ```
 
-#### 3. Configurar Ambiente Python
+#### Passo 4: Configurar Acesso Local (Opcional)
+
+Para desenvolvimento, você pode configurar acesso local:
+
+```bash
+# Editar configuração do PostgreSQL
+sudo nano /etc/postgresql/*/main/postgresql.conf
+# Alterar: listen_addresses = 'localhost'
+
+sudo nano /etc/postgresql/*/main/pg_hba.conf
+# Alterar: local all all md5
+
+# Reiniciar PostgreSQL
+sudo systemctl restart postgresql
+```
+
+#### Passo 5: Instalar Redis (Opcional)
+
+**Ubuntu/Debian:**
+```bash
+sudo apt-get install -y redis-server
+sudo systemctl start redis
+sudo systemctl enable redis
+```
+
+**CentOS/RHEL:**
+```bash
+sudo yum install -y redis
+sudo systemctl start redis
+sudo systemctl enable redis
+```
+
+**Fedora:**
+```bash
+sudo dnf install -y redis
+sudo systemctl start redis
+sudo systemctl enable redis
+```
+
+#### Passo 6: Configurar Ambiente Python
 
 ```bash
 # Criar virtual environment
 python3 -m venv venv
+
+# Ativar virtual environment
 source venv/bin/activate
+
+# Atualizar pip
+pip install --upgrade pip
 
 # Instalar dependências
 pip install -r requirements.txt
-
-# Criar arquivo .env
-cp env.example .env
 ```
 
-#### 4. Testar e Inicializar
+#### Passo 7: Configurar Variáveis de Ambiente
 
 ```bash
-# Testar conexão
-python scripts/test_postgres_connection.py
+# Copiar arquivo de exemplo
+cp env.example .env
+
+# Editar configurações (opcional)
+nano .env
+```
+
+**Conteúdo recomendado do .env:**
+```env
+# Servidor
+HOST=0.0.0.0
+PORT=9000
+DEBUG=false
+
+# Banco de dados
+DATABASE_URL=postgresql://opensas_user:opensas_password@localhost:5432/opensas
+
+# Redis (opcional)
+REDIS_URL=redis://localhost:6379
+
+# Logging
+LOG_LEVEL=INFO
+```
+
+#### Passo 8: Testar Conexões
+
+```bash
+# Testar PostgreSQL
+python scripts/test.sh
+
+# Ou testar manualmente:
+psql -h localhost -U opensas_user -d opensas -c "SELECT version();"
+```
+
+#### Passo 9: Inicializar Banco de Dados
+
+```bash
+# Ativar virtual environment (se necessário)
+source venv/bin/activate
 
 # Inicializar banco de dados
 python manage.py init
@@ -146,12 +266,19 @@ A API estará disponível em:
 
 ### Teste Rápido
 ```bash
-bash scripts/quick_test.sh
+bash scripts/test.sh
 ```
 
-### Teste Detalhado
+### Teste Manual
 ```bash
-python scripts/test_postgres_connection.py
+# Testar PostgreSQL
+psql -h localhost -U opensas_user -d opensas -c "SELECT 1;"
+
+# Testar Redis
+redis-cli ping
+
+# Testar API
+curl http://localhost:9000/health
 ```
 
 ## 🔧 Configurações de Banco de Dados
@@ -176,6 +303,9 @@ psql -h localhost -U opensas_user -d opensas
 
 # Reiniciar serviço
 sudo systemctl restart postgresql
+
+# Ver logs
+sudo journalctl -u postgresql -f
 ```
 
 ### SQLite (Desenvolvimento)
@@ -196,16 +326,24 @@ O projeto inclui benchmarks JMeter para testar a performance dos endpoints.
 1. Certifique-se de que o JMeter está instalado
 2. Execute todos os benchmarks:
 ```bash
-bash scripts/run_all_benchmarks.sh
+bash scripts/benchmark.sh
 ```
 
-Os resultados serão salvos em subpastas dentro de `results/` para cada cenário (low, medium, high, stress). A cada execução, a pasta anterior é movida para backup automaticamente.
+Os resultados serão salvos em subpastas dentro de `results/` para cada cenário (low, medium, high, stress, extreme).
 
-#### Níveis de Carga
-- **Low**: 2 usuários, 5 iterações
-- **Medium**: 10 usuários, 10 iterações
-- **High**: 50 usuários, 20 iterações
-- **Stress**: 200 usuários, 50 iterações
+#### Níveis de Carga Padronizados
+- **LOW**: 2 threads x 10 loops = 120 requisições
+- **MEDIUM**: 10 threads x 10 loops = 600 requisições
+- **HIGH**: 30 threads x 10 loops = 1,800 requisições
+- **STRESS**: 50 threads x 10 loops = 3,000 requisições
+- **EXTREME**: 100 threads x 10 loops = 6,000 requisições
+
+### Análise de Resultados
+
+```bash
+# Executar análise dos resultados
+python scripts/analyze_results.py
+```
 
 ## 📊 Estrutura do Projeto
 
@@ -223,11 +361,18 @@ OpenSAS/
 │       ├── sas_auth.py         # Modelo SAS Authorization
 │       └── event.py            # Modelo Event
 ├── scripts/
-│   ├── setup_environment.sh    # Script de configuração completa
-│   ├── setup_postgres_local.sh # Script para PostgreSQL
-│   ├── setup_redis_local.sh    # Script para Redis
-│   ├── test_postgres_connection.py # Teste de conexão
-│   └── quick_test.sh          # Teste rápido
+│   ├── setup.sh                # Script de configuração completa
+│   ├── test.sh                 # Script de teste e diagnóstico
+│   ├── benchmark.sh            # Script de benchmarks JMeter
+│   └── analyze_results.py      # Análise de resultados
+├── plans/
+│   ├── sas_full_flow_low.jmx   # Plano LOW
+│   ├── sas_full_flow_medium.jmx # Plano MEDIUM
+│   ├── sas_full_flow_high.jmx  # Plano HIGH
+│   ├── sas_full_flow_stress.jmx # Plano STRESS
+│   └── sas_full_flow_extreme.jmx # Plano EXTREME
+├── results/                    # Resultados dos benchmarks
+├── analysis_output/            # Gráficos e estatísticas
 ├── requirements.txt
 ├── run.py                      # Script de execução da API
 ├── manage.py                   # Script de administração do banco
@@ -281,25 +426,63 @@ Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICE
 
 Para suporte, abra uma issue no repositório ou entre em contato com a equipe de desenvolvimento.
 
-## 🗂️ Organização dos Resultados por Tipo de Requisição
+## 🔧 Troubleshooting
 
-Após rodar os benchmarks, você pode organizar os resultados `.jtl` em subpastas por tipo de requisição (ex: Authorize, Registration, Grant, etc.) usando o script:
+### Problemas Comuns
+
+**1. Erro de conexão com PostgreSQL:**
+```bash
+# Verificar se o serviço está rodando
+sudo systemctl status postgresql
+
+# Verificar logs
+sudo journalctl -u postgresql -f
+
+# Reiniciar serviço
+sudo systemctl restart postgresql
+```
+
+**2. Erro de permissão no PostgreSQL:**
+```bash
+# Verificar configuração de autenticação
+sudo nano /etc/postgresql/*/main/pg_hba.conf
+
+# Reiniciar PostgreSQL
+sudo systemctl restart postgresql
+```
+
+**3. Erro de dependências Python:**
+```bash
+# Atualizar pip
+pip install --upgrade pip
+
+# Reinstalar dependências
+pip install -r requirements.txt --force-reinstall
+```
+
+**4. Erro de porta em uso:**
+```bash
+# Verificar processos na porta 9000
+sudo lsof -i :9000
+
+# Matar processo se necessário
+sudo kill -9 <PID>
+```
+
+### Comandos Úteis
 
 ```bash
-python3 scripts/organize_results_by_request_type.py
-```
+# Status dos serviços
+sudo systemctl status postgresql redis
 
-Esse script percorre todas as pastas em `results/`, lê cada arquivo `.jtl` e separa as linhas por tipo de requisição (coluna `label`). Para cada tipo, é criada uma subpasta dentro do cenário correspondente, contendo um arquivo `.jtl` apenas com as linhas daquele tipo. O arquivo original é mantido intacto.
+# Logs em tempo real
+sudo journalctl -u postgresql -f
+sudo journalctl -u redis -f
 
-Exemplo de estrutura após rodar o script:
+# Testar conexões
+psql -h localhost -U opensas_user -d opensas -c "SELECT 1;"
+redis-cli ping
 
-```
-results/
-  sas_full_flow_high/
-    run_1_20250701_091324.jtl
-    Authorize/
-      run_1_20250701_091324.jtl
-    Registration/
-      run_1_20250701_091324.jtl
-    ...
+# Verificar estrutura do projeto
+tree -L 2
 ``` 
